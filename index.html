@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-motion="on">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Automation Agency | Solutionz AI</title>
+<meta name="description" content="AI automation agency for workflow automation, software integration, AI agents, websites and dashboards. Less manual work. Book a free 30-minute discovery call."><meta name="theme-color" content="#043377">
+<link rel="canonical" href="https://solutionzai.com/"><meta property="og:site_name" content="Solutionz AI">
+<meta property="og:title" content="AI Automation Agency | Solutionz AI">
+<meta property="og:description" content="AI automation agency for workflow automation, software integration, AI agents, websites and dashboards. Less manual work. Book a free 30-minute discovery call.">
+<meta property="og:url" content="https://solutionzai.com/"><meta property="og:type" content="website">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preload" href="assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>
+(function(){var d=document.documentElement,q=new URLSearchParams(location.search);
+var m=q.get('motion');if(m==='on'||m==='off')d.setAttribute('data-motion',m);
+var off=d.getAttribute('data-motion')==='off'||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+d.classList.add(off?'fx-off':'fx-on');
+var iq=q.get('intro'),seen=false;try{seen=sessionStorage.getItem('sz-intro')==='1'}catch(e){}
+if(!off&&true&&iq!=='off'&&(iq==='on'||(!seen&&!location.hash)))d.classList.add('intro-pre');
+if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on');d.classList.add('fx-off')}},4000)})();
+</script>
+<!-- GSAP 3.13 (every plugin is free since 3.13), pinned versions from cdnjs; self-hosted at launch. Deferred, so they run in order before engine.js. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrambleTextPlugin.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/DrawSVGPlugin.min.js" defer></script>
+<script src="assets/vendor/lenis.min.js" defer></script>
+<script src="assets/js/intro.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/engine.js" defer></script>
+<script src="assets/js/logo.js" defer></script>
+<script src="assets/js/lower.js" defer></script>
+<script type="application/json" id="tile-logos">[{"src":"n8n-icon.svg","mono":false,"rank":0,"pin":[1,1]},{"src":"zapier-dark.svg","mono":false,"rank":9,"pin":[4,1]},{"src":"google-antigravity.svg","mono":false,"rank":3,"pin":[2,0]},{"src":"vs-code.svg","mono":false,"rank":5,"pin":[0,1]},{"src":"openai-icon.svg","mono":true,"rank":6,"pin":[3,0]},{"src":"claude-icon.svg","mono":false,"rank":1,"pin":[2,1]},{"src":"google-gemini-icon.svg","mono":false,"rank":7,"pin":[0,2]},{"src":"microsoft-copilot.svg","mono":false,"rank":8,"pin":[2,-1]},{"src":"higgsfield.png","mono":false,"rank":4,"pin":[1,2]},{"src":"retell-ai.png","mono":true,"rank":null,"pin":[5,1]},{"src":"elevenlabs-icon.svg","mono":true,"rank":null,"pin":[4,0]},{"src":"holly-ai-nimblr.png","mono":false,"rank":null,"pin":[1,4]},{"src":"modmed.png","mono":false,"rank":null,"pin":[1,3]},{"src":"ringcentral.png","mono":false,"rank":null,"pin":[3,2]},{"src":"salesforce.svg","mono":false,"rank":2,"pin":[1,0]},{"src":"monday-icon.svg","mono":false,"rank":null,"pin":[2,3]},{"src":"microsoft-icon.svg","mono":false,"rank":null,"pin":[4,3]},{"src":"google-icon.svg","mono":false,"rank":null,"pin":[3,1]},{"src":"retool-icon.svg","mono":true,"rank":null,"pin":[-2,3]},{"src":"google-gmail.svg","mono":false,"rank":null,"pin":[-1,3]},{"src":"microsoft-outlook.svg","mono":false,"rank":null,"pin":[0,5]},{"src":"microsoft-teams.svg","mono":false,"rank":11,"pin":[-1,2]},{"src":"google-meet.svg","mono":false,"rank":null,"pin":[5,2]},{"src":"slack-icon.svg","mono":false,"rank":10,"pin":[0,3]},{"src":"telegram.svg","mono":false,"rank":null,"pin":[3,3]},{"src":"instantly-ai.png","mono":false,"rank":null,"pin":[1,5]},{"src":"typeform-icon.svg","mono":true,"rank":null,"pin":[1,6]},{"src":"wix.svg","mono":true,"rank":null,"pin":[3,-1]},{"src":"hostinger.svg","mono":false,"rank":null,"pin":[4,2]},{"src":"microsoft-azure.svg","mono":false,"rank":null,"pin":[0,4]},{"src":"google-calendar.svg","mono":false,"rank":null,"pin":[2,4]},{"src":"google-drive.svg","mono":false,"rank":null,"pin":[2,2]},{"src":"google-sheets.png","mono":false,"rank":null,"pin":[2,5]},{"src":"microsoft-word.svg","mono":false,"rank":null,"pin":[3,4]},{"src":"google-forms.png","mono":false,"rank":null,"pin":[-1,4]},{"src":"microsoft-excel.svg","mono":false,"rank":null},{"src":"google-docs.png","mono":false,"rank":null},{"src":"microsoft-powerpoint.svg","mono":false,"rank":null},{"src":"google-slides.png","mono":false,"rank":null},{"src":"microsoft-onedrive.svg","mono":false,"rank":null},{"src":"microsoft-sharepoint.svg","mono":false,"rank":null},{"src":"google-chat.png","mono":false,"rank":null},{"src":"microsoft-onenote.svg","mono":false,"rank":null},{"src":"google-keep.png","mono":false,"rank":null},{"src":"microsoft-forms.svg","mono":false,"rank":null}]</script>
+<script src="assets/js/tiles.js" defer></script>
+<script src="assets/js/rain.js" defer></script>
+<script src="assets/js/console.js" defer></script>
+<script src="assets/js/sections.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Solutionz AI builds automations and connects business software so routine work runs without people re-typing, chasing or copying between tools. That covers scheduled invoicing, appointment booking, lead follow-up, AI voice and chat agents, websites, marketing systems and dashboards. Each build is made for your process, not sold off the shelf."}, "name": "What does an AI automation agency do?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Any business whose team repeats the same administrative work every week. Our first case studies are healthcare practices, because that is where the founder spent 15 years, and the same systems fit clinics, trades, professional services, retail and agencies alike."}, "name": "Which industries do you work with?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Usually, yes. We build on automation platforms such as n8n and Zapier and on native connections, which link to most CRMs, calendars, accounting tools, email and practice-management systems. Where a system allows connections we can usually connect it; where it does not, we tell you on the discovery call."}, "name": "Will it work with the software we already use?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Each project is quoted after the free discovery call, with a fixed scope and a fixed price for the build. Ongoing monitoring and improvements are optional and quoted separately. We do not bill open-ended hours."}, "name": "How much does it cost?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the workflow and how many systems are involved. We agree a scope and a delivery date before work starts, and we tell you if either changes."}, "name": "How long does it take?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "No. Every build comes with plain documentation and a walkthrough for your team, and someone on your side can always see it, pause it or take over. You own what we build."}, "name": "Do we need technical staff to run it?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Yes. For healthcare clients we build HIPAA-compliant solutions on platforms that are themselves HIPAA-compliant, such as Holly AI by Nimblr for scheduling, which Nimblr states is HIPAA-compliant and SOC-certified, and we design the workflow so protected health information never leaves those systems. Ask us how this applies to the systems you use."}, "name": "Is our data safe? Can you build HIPAA-compliant solutions?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Most SEO aims to get you into Google\u0027s list of links. We also work on getting you into the answer: when someone asks Google, ChatGPT or Perplexity for a business like yours, we want you named. Our AI Visibility Audit checks both and gives you a 90-day plan. Some people call this AEO or GEO; we call it being found."}, "name": "How is your SEO different from a marketing agency\u0027s?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "Thirty minutes, free. You describe the problem, we pick one workflow your team repeats, and you leave with a plain summary of what could be automated and what it would involve, whether or not you hire us."}, "name": "What happens on the discovery call?"}, {"@type": "Question", "acceptedAnswer": {"@type": "Answer", "text": "We tell you. If the workflow is too small, too irregular, or better fixed another way, you hear that on the call."}, "name": "What if automation is not right for us?"}]}</script>
+</head>
+<body class="fresh fresh-console">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="" aria-label="Solutionz AI, home"><svg class="logo-svg" viewBox="0 0 1646.9 255.0" aria-hidden="true" focusable="false"><g class="lg-sym" transform="translate(6 6.00) scale(0.49897)"><path class="lg-f lg-f1 lg-ink" d="M0 487 L312 0 L397 143 L176 487 Z"/><path class="lg-f lg-f2 lg-green" d="M357 305 L460 405 L406 487 L250 487 Z"/><path class="lg-f lg-f3 lg-ink" d="M357 305 H500 L540 487 Z"/><path class="lg-f lg-f4 lg-green" d="M312 0 H470 L716 487 H540 Z"/></g><g class="lg-txt" transform="translate(466.89 142.75)"><g class="lg-l"><path class="lg-ink" d="M74 477 L362 505 Q388 360 467.5 292.0 Q547 224 682 224 Q825 224 897.5 284.5 Q970 345 970 426 Q970 478 939.5 514.5 Q909 551 833 578 Q781 596 596 642 Q358 701 262 787 Q127 908 127 1082 Q127 1194 190.5 1291.5 Q254 1389 373.5 1440.0 Q493 1491 662 1491 Q938 1491 1077.5 1370.0 Q1217 1249 1224 1047 L928 1034 Q909 1147 846.5 1196.5 Q784 1246 659 1246 Q530 1246 457 1193 Q410 1159 410 1102 Q410 1050 454 1013 Q510 966 726.0 915.0 Q942 864 1045.5 809.5 Q1149 755 1207.5 660.5 Q1266 566 1266 427 Q1266 301 1196.0 191.0 Q1126 81 998.0 27.5 Q870 -26 679 -26 Q401 -26 252.0 102.5 Q103 231 74 477 Z" transform="translate(0.0000 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M89 724 Q89 948 156 1100 Q206 1212 292.5 1301.0 Q379 1390 482 1433 Q619 1491 798 1491 Q1122 1491 1316.5 1290.0 Q1511 1089 1511 731 Q1511 376 1318.0 175.5 Q1125 -25 802 -25 Q475 -25 282.0 174.5 Q89 374 89 724 Z M394 734 Q394 485 509.0 356.5 Q624 228 801 228 Q978 228 1091.5 355.5 Q1205 483 1205 738 Q1205 990 1094.5 1114.0 Q984 1238 801 1238 Q618 1238 506.0 1112.5 Q394 987 394 734 Z" transform="translate(112.2188 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M157 0 L157 1454 L453 1454 L453 247 L1189 247 L1189 0 L157 0 Z" transform="translate(242.1719 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M147 1466 L443 1466 L443 672 Q443 483 454 427 Q473 337 544.5 282.5 Q616 228 740 228 Q866 228 930.0 279.5 Q994 331 1007.0 406.0 Q1020 481 1020 655 L1020 1466 L1316 1466 L1316 696 Q1316 432 1292.0 323.0 Q1268 214 1203.5 139.0 Q1139 64 1031.0 19.5 Q923 -25 749 -25 Q539 -25 430.5 23.5 Q322 72 259.0 149.5 Q196 227 176 312 Q147 438 147 684 L147 1466 Z" transform="translate(345.4062 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M479 0 L479 1218 L44 1218 L44 1466 L1209 1466 L1209 1218 L775 1218 L775 0 L479 0 Z" transform="translate(466.4531 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M140 0 L140 1466 L436 1466 L436 0 L140 0 Z" transform="translate(569.6875 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M89 724 Q89 948 156 1100 Q206 1212 292.5 1301.0 Q379 1390 482 1433 Q619 1491 798 1491 Q1122 1491 1316.5 1290.0 Q1511 1089 1511 731 Q1511 376 1318.0 175.5 Q1125 -25 802 -25 Q475 -25 282.0 174.5 Q89 374 89 724 Z M394 734 Q394 485 509.0 356.5 Q624 228 801 228 Q978 228 1091.5 355.5 Q1205 483 1205 738 Q1205 990 1094.5 1114.0 Q984 1238 801 1238 Q618 1238 506.0 1112.5 Q394 987 394 734 Z" transform="translate(619.6406 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M152 0 L152 1466 L440 1466 L1040 487 L1040 1466 L1315 1466 L1315 0 L1018 0 L427 956 L427 0 L152 0 Z" transform="translate(749.5938 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M22 0 L22 267 L792 1218 L109 1218 L109 1466 L1182 1466 L1182 1236 L379 247 L1213 247 L1213 0 L22 0 Z" transform="translate(870.6406 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-green" d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(1000.3750 0) scale(0.0820312 -0.0820312)"/></g><g class="lg-l"><path class="lg-green" d="M140 0 L140 1466 L436 1466 L436 0 L140 0 Z" transform="translate(1126.6992 0) scale(0.0820312 -0.0820312)"/></g><g class="lg-d"><path class="lg-ink" d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(0.0000 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M140 0 L140 1466 L436 1466 L436 0 L140 0 Z" transform="translate(64.5617 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(151.0288 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M147 1466 L443 1466 L443 672 Q443 483 454 427 Q473 337 544.5 282.5 Q616 228 740 228 Q866 228 930.0 279.5 Q994 331 1007.0 406.0 Q1020 481 1020 655 L1020 1466 L1316 1466 L1316 696 Q1316 432 1292.0 323.0 Q1268 214 1203.5 139.0 Q1139 64 1031.0 19.5 Q923 -25 749 -25 Q539 -25 430.5 23.5 Q322 72 259.0 149.5 Q196 227 176 312 Q147 438 147 684 L147 1466 Z" transform="translate(215.5905 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M479 0 L479 1218 L44 1218 L44 1466 L1209 1466 L1209 1218 L775 1218 L775 0 L479 0 Z" transform="translate(280.1521 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M89 724 Q89 948 156 1100 Q206 1212 292.5 1301.0 Q379 1390 482 1433 Q619 1491 798 1491 Q1122 1491 1316.5 1290.0 Q1511 1089 1511 731 Q1511 376 1318.0 175.5 Q1125 -25 802 -25 Q475 -25 282.0 174.5 Q89 374 89 724 Z M394 734 Q394 485 509.0 356.5 Q624 228 801 228 Q978 228 1091.5 355.5 Q1205 483 1205 738 Q1205 990 1094.5 1114.0 Q984 1238 801 1238 Q618 1238 506.0 1112.5 Q394 987 394 734 Z" transform="translate(339.3701 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M145 0 L145 1466 L588 1466 L854 466 L1117 1466 L1561 1466 L1561 0 L1286 0 L1286 1154 L995 0 L710 0 L420 1154 L420 0 L145 0 Z" transform="translate(406.6036 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(476.4856 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M479 0 L479 1218 L44 1218 L44 1466 L1209 1466 L1209 1218 L775 1218 L775 0 L479 0 Z" transform="translate(541.0473 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M140 0 L140 1466 L436 1466 L436 0 L140 0 Z" transform="translate(600.2652 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M89 724 Q89 948 156 1100 Q206 1212 292.5 1301.0 Q379 1390 482 1433 Q619 1491 798 1491 Q1122 1491 1316.5 1290.0 Q1511 1089 1511 731 Q1511 376 1318.0 175.5 Q1125 -25 802 -25 Q475 -25 282.0 174.5 Q89 374 89 724 Z M394 734 Q394 485 509.0 356.5 Q624 228 801 228 Q978 228 1091.5 355.5 Q1205 483 1205 738 Q1205 990 1094.5 1114.0 Q984 1238 801 1238 Q618 1238 506.0 1112.5 Q394 987 394 734 Z" transform="translate(643.4988 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M152 0 L152 1466 L440 1466 L1040 487 L1040 1466 L1315 1466 L1315 0 L1018 0 L427 956 L427 0 L152 0 Z" transform="translate(710.7323 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(818.5275 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M831 539 L831 786 L1469 786 L1469 202 Q1376 112 1199.5 43.5 Q1023 -25 842 -25 Q612 -25 441.0 71.5 Q270 168 184.0 347.5 Q98 527 98 738 Q98 967 194.0 1145.0 Q290 1323 475 1418 Q616 1491 826 1491 Q1099 1491 1252.5 1376.5 Q1406 1262 1450 1060 L1156 1005 Q1125 1113 1039.5 1175.5 Q954 1238 826 1238 Q632 1238 517.5 1115.0 Q403 992 403 750 Q403 489 519.0 358.5 Q635 228 823 228 Q916 228 1009.5 264.5 Q1103 301 1170 353 L1170 539 L831 539 Z" transform="translate(883.0892 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M149 0 L149 1466 L1236 1466 L1236 1218 L445 1218 L445 893 L1181 893 L1181 646 L445 646 L445 247 L1264 247 L1264 0 L149 0 Z" transform="translate(950.3228 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M152 0 L152 1466 L440 1466 L1040 487 L1040 1466 L1315 1466 L1315 0 L1018 0 L427 956 L427 0 L152 0 Z" transform="translate(1012.2360 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M1087 539 L1374 448 Q1308 208 1154.5 91.5 Q1001 -25 765 -25 Q473 -25 285.0 174.5 Q97 374 97 720 Q97 1086 286.0 1288.5 Q475 1491 783 1491 Q1052 1491 1220 1332 Q1320 1238 1370 1062 L1077 992 Q1051 1106 968.5 1172.0 Q886 1238 768 1238 Q605 1238 503.5 1121.0 Q402 1004 402 742 Q402 464 502.0 346.0 Q602 228 762 228 Q880 228 965.0 303.0 Q1050 378 1087 539 Z" transform="translate(1076.7977 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M534 0 L534 617 L-3 1466 L344 1466 L689 886 L1027 1466 L1368 1466 L829 615 L829 0 L534 0 Z" transform="translate(1141.3594 84) scale(0.0234375 -0.0234375)"/></g></g></svg></a>
+
+    <nav class="nav" aria-label="Main">
+      <ul class="nav-list">
+        <li class="has-menu">
+          <a class="nav-link nav-services" href="services/">Services</a>
+          <button class="nav-link menu-btn menu-chev" type="button" aria-expanded="false" aria-controls="services-menu" aria-label="Services">
+            <svg class="chev" viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="menu" id="services-menu" hidden>
+            <ul>
+              <li><a href="services/automation/"><strong>Business Automation</strong><span>Repetitive admin, done on schedule.</span></a></li>
+              <li><a href="services/integration/"><strong>Software Integration</strong><span>Your tools, connected.</span></a></li>
+              <li><a href="services/ai-agents/"><strong>AI Agents &amp; Assistants</strong><span>Answer, book and follow up, around the clock.</span></a></li>
+              <li><a href="services/websites-seo/"><strong>Websites &amp; SEO</strong><span>A website that brings work in.</span></a></li>
+              <li><a href="services/marketing/"><strong>Marketing &amp; Lead Generation</strong><span>Leads that get followed up.</span></a></li>
+              <li><a href="services/dashboards/"><strong>Custom Dashboards &amp; Reporting</strong><span>See what is happening without building reports.</span></a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a class="nav-link" href="about/">About</a></li>
+        <li><a class="nav-link" href="contact/">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary btn-sm header-cta" href="contact/">Book a free call</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+        <svg class="bars" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="label">Menu</span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Main, mobile" hidden>
+    <ul>
+      <li><a href="services/">Services</a>
+        <ul class="sub">
+          <li><a href="services/automation/">Business Automation<span>Repetitive admin, done on schedule.</span></a></li>
+          <li><a href="services/integration/">Software Integration<span>Your tools, connected.</span></a></li>
+          <li><a href="services/ai-agents/">AI Agents &amp; Assistants<span>Answer, book and follow up, around the clock.</span></a></li>
+          <li><a href="services/websites-seo/">Websites &amp; SEO<span>A website that brings work in.</span></a></li>
+          <li><a href="services/marketing/">Marketing &amp; Lead Generation<span>Leads that get followed up.</span></a></li>
+          <li><a href="services/dashboards/">Custom Dashboards &amp; Reporting<span>See what is happening without building reports.</span></a></li>
+        </ul>
+      </li>
+      <li><a href="about/">About</a></li>
+      <li><a href="contact/">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary" href="contact/">Book a free 30-minute discovery call</a>
+  </nav>
+</header><main id="main">
+<!-- 1 · hero: a keyboard of platform keys, copy at the lower left, the platforms strip along the foot -->
+<section class="hero" id="top" aria-labelledby="hero-h1">
+  <canvas class="hero-tiles" id="hero-tiles" aria-hidden="true"></canvas>
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="container hero-copy" data-hero-copy>
+    <p class="code-eyebrow" data-hero="eyebrow"><span class="tk-com" aria-hidden="true">//</span> <span data-type data-typewriter>Practical AI for everyday business problems.</span></p>
+    <h1 id="hero-h1" aria-label="Less manual work. More time for your business."><span class="h1-line" data-split>Less manual work.</span> <span class="h1-line"><span data-split>More time for your</span> <span class="rot" aria-hidden="true"><span class="rot-size">business.</span><span class="rot-size">customers.</span><span class="rot-size">team.</span><span class="rot-word" data-rotate="[&#34;business.&#34;, &#34;customers.&#34;, &#34;team.&#34;]">business.</span></span></span></h1>
+    <p class="lead" data-hero="lead">We build automations, connect the software your team already uses, and add AI agents, websites and reporting, so routine work stops taking people away from customers.</p>
+    <div class="btn-row" data-hero="btns">
+      <a class="btn btn-primary" href="contact/">Book a free 30-minute discovery call <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn-secondary" href="services/">See what we automate <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+    <p class="hero-note" data-hero="note"><span aria-hidden="true">*</span>Thirty minutes, free, no obligation. If automation is not the right fix, we say so.<span aria-hidden="true">*</span></p>
+  </div>
+  <div class="hero-strip" data-hero="strip">
+    <p class="strip-label"><span class="tk-com" aria-hidden="true">//</span> Platforms we build on</p>
+    <div class="strip-window">
+      <div class="strip-track" data-strip>
+        <ul class="strip-row">
+<li><img class="plogo" src="assets/logos/n8n-icon.svg" alt="" loading="lazy" decoding="async"><span>n8n</span></li><li><img class="plogo plogo-word" src="assets/logos/zapier-dark.svg" alt="" loading="lazy" decoding="async"><span class="visually-hidden">Zapier</span></li><li><img class="plogo" src="assets/logos/google-antigravity.svg" alt="" loading="lazy" decoding="async"><span>Google Antigravity</span></li><li><img class="plogo" src="assets/logos/vs-code.svg" alt="" loading="lazy" decoding="async"><span>VS Code</span></li><li><img class="plogo plogo-mono" src="assets/logos/openai-icon.svg" alt="" loading="lazy" decoding="async"><span>OpenAI</span></li><li><img class="plogo" src="assets/logos/claude-icon.svg" alt="" loading="lazy" decoding="async"><span>Claude (Anthropic)</span></li><li><img class="plogo" src="assets/logos/google-gemini-icon.svg" alt="" loading="lazy" decoding="async"><span>Gemini (Google)</span></li><li><img class="plogo" src="assets/logos/microsoft-copilot.svg" alt="" loading="lazy" decoding="async"><span>Microsoft Copilot</span></li><li><img class="plogo" src="assets/logos/higgsfield.png" alt="" loading="lazy" decoding="async"><span>Higgsfield</span></li><li><img class="plogo plogo-mono" src="assets/logos/retell-ai.png" alt="" loading="lazy" decoding="async"><span>Retell AI</span></li><li><img class="plogo plogo-mono" src="assets/logos/elevenlabs-icon.svg" alt="" loading="lazy" decoding="async"><span>ElevenLabs</span></li><li><img class="plogo" src="assets/logos/holly-ai-nimblr.png" alt="" loading="lazy" decoding="async"><span>Holly AI by Nimblr</span></li><li><img class="plogo" src="assets/logos/modmed.png" alt="" loading="lazy" decoding="async"><span>ModMed</span></li><li><img class="plogo plogo-word" src="assets/logos/ringcentral.png" alt="" loading="lazy" decoding="async"><span class="visually-hidden">RingCentral</span></li><li><img class="plogo" src="assets/logos/salesforce.svg" alt="" loading="lazy" decoding="async"><span>Salesforce</span></li><li><img class="plogo" src="assets/logos/monday-icon.svg" alt="" loading="lazy" decoding="async"><span>monday.com</span></li><li><img class="plogo" src="assets/logos/microsoft-icon.svg" alt="" loading="lazy" decoding="async"><span>Microsoft 365 and Azure</span></li><li><img class="plogo" src="assets/logos/google-icon.svg" alt="" loading="lazy" decoding="async"><span>Google Workspace</span></li><li><img class="plogo plogo-mono" src="assets/logos/retool-icon.svg" alt="" loading="lazy" decoding="async"><span>Retool</span></li><li><img class="plogo" src="assets/logos/google-gmail.svg" alt="" loading="lazy" decoding="async"><span>Gmail</span></li><li><img class="plogo" src="assets/logos/microsoft-outlook.svg" alt="" loading="lazy" decoding="async"><span>Microsoft Outlook</span></li><li><img class="plogo" src="assets/logos/microsoft-teams.svg" alt="" loading="lazy" decoding="async"><span>Microsoft Teams</span></li><li><img class="plogo" src="assets/logos/google-meet.svg" alt="" loading="lazy" decoding="async"><span>Google Meet</span></li><li><img class="plogo" src="assets/logos/slack-icon.svg" alt="" loading="lazy" decoding="async"><span>Slack</span></li><li><img class="plogo" src="assets/logos/telegram.svg" alt="" loading="lazy" decoding="async"><span>Telegram</span></li><li><img class="plogo" src="assets/logos/instantly-ai.png" alt="" loading="lazy" decoding="async"><span>Instantly AI</span></li><li><img class="plogo plogo-mono" src="assets/logos/typeform-icon.svg" alt="" loading="lazy" decoding="async"><span>Typeform</span></li><li><img class="plogo plogo-mono plogo-word" src="assets/logos/wix.svg" alt="" loading="lazy" decoding="async"><span class="visually-hidden">Wix</span></li><li><img class="plogo" src="assets/logos/hostinger.svg" alt="" loading="lazy" decoding="async"><span>Hostinger</span></li>        </ul>
+        <ul class="strip-row" aria-hidden="true">
+<li><img class="plogo" src="assets/logos/n8n-icon.svg" alt="" loading="lazy" decoding="async"><span>n8n</span></li><li><img class="plogo plogo-word" src="assets/logos/zapier-dark.svg" alt="" loading="lazy" decoding="async"><span class="visually-hidden">Zapier</span></li><li><img class="plogo" src="assets/logos/google-antigravity.svg" alt="" loading="lazy" decoding="async"><span>Google Antigravity</span></li><li><img class="plogo" src="assets/logos/vs-code.svg" alt="" loading="lazy" decoding="async"><span>VS Code</span></li><li><img class="plogo plogo-mono" src="assets/logos/openai-icon.svg" alt="" loading="lazy" decoding="async"><span>OpenAI</span></li><li><img class="plogo" src="assets/logos/claude-icon.svg" alt="" loading="lazy" decoding="async"><span>Claude (Anthropic)</span></li><li><img class="plogo" src="assets/logos/google-gemini-icon.svg" alt="" loading="lazy" decoding="async"><span>Gemini (Google)</span></li><li><img class="plogo" src="assets/logos/microsoft-copilot.svg" alt="" loading="lazy" decoding="async"><span>Microsoft Copilot</span></li><li><img class="plogo" src="assets/logos/higgsfield.png" alt="" loading="lazy" decoding="async"><span>Higgsfield</span></li><li><img class="plogo plogo-mono" src="assets/logos/retell-ai.png" alt="" loading="lazy" decoding="async"><span>Retell AI</span></li><li><img class="plogo plogo-mono" src="assets/logos/elevenlabs-icon.svg" alt="" loading="lazy" decoding="async"><span>ElevenLabs</span></li><li><img class="plogo" src="assets/logos/holly-ai-nimblr.png" alt="" loading="lazy" decoding="async"><span>Holly AI by Nimblr</span></li><li><img class="plogo" src="assets/logos/modmed.png" alt="" loading="lazy" decoding="async"><span>ModMed</span></li><li><img class="plogo plogo-word" src="assets/logos/ringcentral.png" alt="" loading="lazy" decoding="async"><span class="visually-hidden">RingCentral</span></li><li><img class="plogo" src="assets/logos/salesforce.svg" alt="" loading="lazy" decoding="async"><span>Salesforce</span></li><li><img class="plogo" src="assets/logos/monday-icon.svg" alt="" loading="lazy" decoding="async"><span>monday.com</span></li><li><img class="plogo" src="assets/logos/microsoft-icon.svg" alt="" loading="lazy" decoding="async"><span>Microsoft 365 and Azure</span></li><li><img class="plogo" src="assets/logos/google-icon.svg" alt="" loading="lazy" decoding="async"><span>Google Workspace</span></li><li><img class="plogo plogo-mono" src="assets/logos/retool-icon.svg" alt="" loading="lazy" decoding="async"><span>Retool</span></li><li><img class="plogo" src="assets/logos/google-gmail.svg" alt="" loading="lazy" decoding="async"><span>Gmail</span></li><li><img class="plogo" src="assets/logos/microsoft-outlook.svg" alt="" loading="lazy" decoding="async"><span>Microsoft Outlook</span></li><li><img class="plogo" src="assets/logos/microsoft-teams.svg" alt="" loading="lazy" decoding="async"><span>Microsoft Teams</span></li><li><img class="plogo" src="assets/logos/google-meet.svg" alt="" loading="lazy" decoding="async"><span>Google Meet</span></li><li><img class="plogo" src="assets/logos/slack-icon.svg" alt="" loading="lazy" decoding="async"><span>Slack</span></li><li><img class="plogo" src="assets/logos/telegram.svg" alt="" loading="lazy" decoding="async"><span>Telegram</span></li><li><img class="plogo" src="assets/logos/instantly-ai.png" alt="" loading="lazy" decoding="async"><span>Instantly AI</span></li><li><img class="plogo plogo-mono" src="assets/logos/typeform-icon.svg" alt="" loading="lazy" decoding="async"><span>Typeform</span></li><li><img class="plogo plogo-mono plogo-word" src="assets/logos/wix.svg" alt="" loading="lazy" decoding="async"><span class="visually-hidden">Wix</span></li><li><img class="plogo" src="assets/logos/hostinger.svg" alt="" loading="lazy" decoding="async"><span>Hostinger</span></li>        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- sections 01 to 06 sit on the raining letters (founder, round 3: "use its background in //1 to //5"; the case studies
+     joined as 05 on 28 September 2026); the canvas stays
+     on screen while they scroll (sticky) and pauses when the zone is off screen -->
+<div class="rain-zone" data-rain-zone>
+<canvas class="rain-bg" aria-hidden="true"></canvas>
+
+<!-- 2 · one workflow: platform plates, lines drawn in with the scroll and pulses running down them into the code card -->
+<section class="section connect" id="workflow" data-connect>
+  <div class="container">
+    <div class="section-head connect-head" data-reveal>
+      <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>01</span></p>
+      <h2 data-scramble>One automated workflow</h2>
+      <p data-typewriter>An inquiry arrives after hours, lands in the CRM and the calendar with no re-typing, and the team gets a summary in the morning. It runs on its own and the team can pause it at any time.</p>
+    </div>
+    <div class="connect-stage">
+      <ul class="connect-keys" aria-hidden="true">
+<li class="mini-key" style="--k: 0"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/n8n-icon.svg" alt="" loading="lazy" decoding="async"></li><li class="mini-key" style="--k: 0"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo plogo-mono" src="assets/logos/openai-icon.svg" alt="" loading="lazy" decoding="async"></li><li class="mini-key" style="--k: 0"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/claude-icon.svg" alt="" loading="lazy" decoding="async"></li><li class="mini-key" style="--k: 0"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/google-gemini-icon.svg" alt="" loading="lazy" decoding="async"></li><li class="mini-key" style="--k: 0"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/slack-icon.svg" alt="" loading="lazy" decoding="async"></li><li class="mini-key" style="--k: 0"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/salesforce.svg" alt="" loading="lazy" decoding="async"></li><li class="mini-key" style="--k: 0"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/microsoft-icon.svg" alt="" loading="lazy" decoding="async"></li><li class="mini-key" style="--k: 0"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/google-icon.svg" alt="" loading="lazy" decoding="async"></li>      </ul>
+      <svg class="connect-lines" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+<path class="cl-base" d="M62.5 0 C62.5 110 500 80 500 200"/><path class="cl-live" data-line d="M62.5 0 C62.5 110 500 80 500 200"/><path class="cl-pulse" pathLength="100" style="--k: 3" d="M62.5 0 C62.5 110 500 80 500 200"/><path class="cl-base" d="M187.5 0 C187.5 110 500 80 500 200"/><path class="cl-live" data-line d="M187.5 0 C187.5 110 500 80 500 200"/><path class="cl-pulse" pathLength="100" style="--k: 0" d="M187.5 0 C187.5 110 500 80 500 200"/><path class="cl-base" d="M312.5 0 C312.5 110 500 80 500 200"/><path class="cl-live" data-line d="M312.5 0 C312.5 110 500 80 500 200"/><path class="cl-pulse" pathLength="100" style="--k: 5" d="M312.5 0 C312.5 110 500 80 500 200"/><path class="cl-base" d="M437.5 0 C437.5 110 500 80 500 200"/><path class="cl-live" data-line d="M437.5 0 C437.5 110 500 80 500 200"/><path class="cl-pulse" pathLength="100" style="--k: 2" d="M437.5 0 C437.5 110 500 80 500 200"/><path class="cl-base" d="M562.5 0 C562.5 110 500 80 500 200"/><path class="cl-live" data-line d="M562.5 0 C562.5 110 500 80 500 200"/><path class="cl-pulse" pathLength="100" style="--k: 6" d="M562.5 0 C562.5 110 500 80 500 200"/><path class="cl-base" d="M687.5 0 C687.5 110 500 80 500 200"/><path class="cl-live" data-line d="M687.5 0 C687.5 110 500 80 500 200"/><path class="cl-pulse" pathLength="100" style="--k: 1" d="M687.5 0 C687.5 110 500 80 500 200"/><path class="cl-base" d="M812.5 0 C812.5 110 500 80 500 200"/><path class="cl-live" data-line d="M812.5 0 C812.5 110 500 80 500 200"/><path class="cl-pulse" pathLength="100" style="--k: 7" d="M812.5 0 C812.5 110 500 80 500 200"/><path class="cl-base" d="M937.5 0 C937.5 110 500 80 500 200"/><path class="cl-live" data-line d="M937.5 0 C937.5 110 500 80 500 200"/><path class="cl-pulse" pathLength="100" style="--k: 4" d="M937.5 0 C937.5 110 500 80 500 200"/>      </svg>
+      <figure class="code-card flow-card" data-code>
+        <figcaption class="code-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="code-file">inquiry-to-booking.flow</span><button class="code-copy" type="button" data-copy>Copy</button></figcaption>
+        <div class="code" data-code-body>
+          <p class="cl" data-cl><span class="ln" aria-hidden="true">01</span><span class="tk-fn">on</span><span class="tk-p">("</span><span class="tk-str">Inquiry arrives</span><span class="tk-p">")</span></p>
+          <p class="cl ind" data-cl><span class="ln" aria-hidden="true">02</span><span class="tk-com">//</span> <span class="tk-com">6:40 PM</span> <span class="tk-com">·</span> <span class="tk-com">Website form, after hours</span></p>
+          <p class="cl" data-cl><span class="ln" aria-hidden="true">03</span><span class="tk-fn">.then</span><span class="tk-p">("</span><span class="tk-str">CRM and calendar updated</span><span class="tk-p">")</span></p>
+          <p class="cl ind" data-cl><span class="ln" aria-hidden="true">04</span><span class="tk-com">//</span> <span class="tk-com">Seconds later</span> <span class="tk-com">·</span> <span class="tk-com">Tagged with the source. No copy and paste.</span></p>
+          <p class="cl" data-cl><span class="ln" aria-hidden="true">05</span><span class="tk-fn">.then</span><span class="tk-p">("</span><span class="tk-str">Your team gets a summary</span><span class="tk-p">")</span></p>
+          <p class="cl ind" data-cl><span class="ln" aria-hidden="true">06</span><span class="tk-com">//</span> <span class="tk-com">8:00 AM</span> <span class="tk-com">·</span> <span class="tk-com">A call back only where a person is needed</span></p>
+          <p class="cl cl-ok" data-cl><span class="ln" aria-hidden="true">07</span><span class="tk-ok">✓</span> <span>Runs on its own. Your team can pause it any time.</span></p>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · problems: glass cards over drifting colour, each with its own accent; they tilt toward the pointer -->
+<section class="section problems glass-stage" id="problems">
+  <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>02</span></p>
+      <h2 data-scramble>The everyday problems that slow a business down</h2>
+      <p data-typewriter>None of this needs a new system. It needs the routine steps between your existing systems to run on their own, with your team in charge.</p>
+    </div>
+    <div class="problem-grid">
+      <article class="problem glow-card" data-batch="problems" data-tilt data-drift="-36" style="--acc: #42CE33; --acc2: #2F8BFF">
+        <div class="problem-top">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 7h18v10H3zM6.5 10h.01M9.5 10h.01M12.5 10h.01M15.5 10h.01M18 10h.01M7 14h10"/></svg></span>
+          <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>01</span></p>
+        </div>
+        <h3>Re-typing</h3>
+        <p>The same customer details keyed into three systems, by hand, every day.</p>
+      </article>
+      <article class="problem glow-card" data-batch="problems" data-tilt data-drift="18" style="--acc: #2F8BFF; --acc2: #42CE33">
+        <div class="problem-top">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 7v5l3 2M20.5 12a8.5 8.5 0 1 1-2.5-6M20.5 3.5v4h-4"/></svg></span>
+          <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>02</span></p>
+        </div>
+        <h3>Chasing</h3>
+        <p>Unpaid invoices, unconfirmed appointments and follow-ups that slip when the week gets busy.</p>
+      </article>
+      <article class="problem glow-card" data-batch="problems" data-tilt data-drift="-18" style="--acc: #7DB6FF; --acc2: #42CE33">
+        <div class="problem-top">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2zM15.5 3.5l5 5M20.5 3.5l-5 5"/></svg></span>
+          <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>03</span></p>
+        </div>
+        <h3>Missed calls</h3>
+        <p>Inquiries that arrive after five, or during the lunch rush, go to voicemail and then to someone else.</p>
+      </article>
+      <article class="problem glow-card" data-batch="problems" data-tilt data-drift="36" style="--acc: #42CE33; --acc2: #7DB6FF">
+        <div class="problem-top">
+          <span class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 17v-3M12 17v-6M15 17v-4"/></svg></span>
+          <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>04</span></p>
+        </div>
+        <h3>Reports nobody has time to build</h3>
+        <p>The numbers you asked for on Monday arrive on Thursday, pulled together by hand.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · what we automate: pinned on desktop; the list steps through and the matching glass panel slides out of the stack -->
+<section class="section services" id="services" data-services>
+  <div class="container services-grid">
+    <div class="services-copy">
+      <div class="section-head" data-reveal>
+        <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>03</span></p>
+        <h2 data-scramble>What we automate</h2>
+        <p data-typewriter>Six groups. Most projects start with one workflow and grow from there.</p>
+      </div>
+      <ol class="service-list">
+        <li class="service-item is-active" data-service>
+          <p class="service-n"><span>01</span> <span class="tk-com" aria-hidden="true">//</span></p>
+          <div class="service-body">
+            <h3>Business Automation</h3>
+            <div class="service-more"><div>
+              <p class="card-promise">Repetitive admin, done on schedule.</p>
+              <p>Invoices, reminders, bookings, documents and notifications that go out on schedule without anyone pushing them along.</p>
+              <a class="more" href="services/automation/">More about Automation</a>
+            </div></div>
+          </div>
+        </li>
+        <li class="service-item" data-service>
+          <p class="service-n"><span>02</span> <span class="tk-com" aria-hidden="true">//</span></p>
+          <div class="service-body">
+            <h3>Software Integration</h3>
+            <div class="service-more"><div>
+              <p class="card-promise">Your tools, connected.</p>
+              <p>Your CRM, accounting, calendar and other systems pass information to each other, so nothing is typed twice.</p>
+              <a class="more" href="services/integration/">More about Integration</a>
+            </div></div>
+          </div>
+        </li>
+        <li class="service-item" data-service>
+          <p class="service-n"><span>03</span> <span class="tk-com" aria-hidden="true">//</span></p>
+          <div class="service-body">
+            <h3>AI Agents &amp; Assistants</h3>
+            <div class="service-more"><div>
+              <p class="card-promise">Answer, book and follow up, around the clock.</p>
+              <p>Voice and chat agents that answer common questions, book appointments and hand off to a person with a summary.</p>
+              <a class="more" href="services/ai-agents/">More about AI Agents</a>
+            </div></div>
+          </div>
+        </li>
+        <li class="service-item" data-service>
+          <p class="service-n"><span>04</span> <span class="tk-com" aria-hidden="true">//</span></p>
+          <div class="service-body">
+            <h3>Websites &amp; SEO</h3>
+            <div class="service-more"><div>
+              <p class="card-promise">A website that brings work in.</p>
+              <p>A fast, clear website whose forms feed your lead workflow, and a plan for being found in Google and named in AI answers.</p>
+              <a class="more" href="services/websites-seo/">More about Websites &amp; SEO</a>
+            </div></div>
+          </div>
+        </li>
+        <li class="service-item" data-service>
+          <p class="service-n"><span>05</span> <span class="tk-com" aria-hidden="true">//</span></p>
+          <div class="service-body">
+            <h3>Marketing &amp; Lead Generation</h3>
+            <div class="service-more"><div>
+              <p class="card-promise">Leads that get followed up.</p>
+              <p>Capture, routing, replies within minutes and follow-up sequences, so inquiries stop going cold.</p>
+              <a class="more" href="services/marketing/">More about Marketing</a>
+            </div></div>
+          </div>
+        </li>
+        <li class="service-item" data-service>
+          <p class="service-n"><span>06</span> <span class="tk-com" aria-hidden="true">//</span></p>
+          <div class="service-body">
+            <h3>Custom Dashboards &amp; Reporting</h3>
+            <div class="service-more"><div>
+              <p class="card-promise">See what is happening without building reports.</p>
+              <p>Dashboards and scheduled summaries drawn from the systems you already run, so the numbers arrive without asking.</p>
+              <a class="more" href="services/dashboards/">More about Dashboards</a>
+            </div></div>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div class="services-visual" aria-hidden="true">
+<div class="stack" data-stack>
+  <div class="stack-rig" data-stack-rig>
+    <div class="panel is-active" style="--i: 0" data-panel>
+      <i class="panel-layer" style="--z: -3"></i><i class="panel-layer" style="--z: -2"></i><i class="panel-layer" style="--z: -1"></i>
+      <span class="panel-face"><svg viewBox="0 0 24 24" focusable="false"><g class="ic-spin"><path d="M20 11a8 8 0 0 0-14.3-4.9M5 3v4h4"/><path d="M4 13a8 8 0 0 0 14.3 4.9M19 21v-4h-4"/></g></svg><span class="panel-n">01</span></span>
+    </div>
+    <div class="panel" style="--i: 1" data-panel>
+      <i class="panel-layer" style="--z: -3"></i><i class="panel-layer" style="--z: -2"></i><i class="panel-layer" style="--z: -1"></i>
+      <span class="panel-face"><svg viewBox="0 0 24 24" focusable="false"><path class="ic-link-a" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path class="ic-link-b" d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span class="panel-n">02</span></span>
+    </div>
+    <div class="panel" style="--i: 2" data-panel>
+      <i class="panel-layer" style="--z: -3"></i><i class="panel-layer" style="--z: -2"></i><i class="panel-layer" style="--z: -1"></i>
+      <span class="panel-face"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 4v3M7 7h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-6a3 3 0 0 1 3-3zM2 12v3M22 12v3M10 16h4"/><path class="ic-ant" d="M12 2.6h.01"/><path class="ic-eye" d="M9 11.4v1.9"/><path class="ic-eye" d="M15 11.4v1.9"/></svg><span class="panel-n">03</span></span>
+    </div>
+    <div class="panel" style="--i: 3" data-panel>
+      <i class="panel-layer" style="--z: -3"></i><i class="panel-layer" style="--z: -2"></i><i class="panel-layer" style="--z: -1"></i>
+      <span class="panel-face"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 5h18v14H3zM3 9h18M6.5 7h.01M9.5 7h.01"/><path class="ic-write" pathLength="1" d="M7 13h6"/><path class="ic-write" pathLength="1" d="M7 16h9"/></svg><span class="panel-n">04</span></span>
+    </div>
+    <div class="panel" style="--i: 4" data-panel>
+      <i class="panel-layer" style="--z: -3"></i><i class="panel-layer" style="--z: -2"></i><i class="panel-layer" style="--z: -1"></i>
+      <span class="panel-face"><svg viewBox="0 0 24 24" focusable="false"><path class="ic-bar" d="M4 20V11"/><path class="ic-bar" d="M9.5 20V5"/><path class="ic-bar" d="M15 20v-8"/><path class="ic-bar" d="M20.5 20V8"/></svg><span class="panel-n">05</span></span>
+    </div>
+    <div class="panel" style="--i: 5" data-panel>
+      <i class="panel-layer" style="--z: -3"></i><i class="panel-layer" style="--z: -2"></i><i class="panel-layer" style="--z: -1"></i>
+      <span class="panel-face"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 4v16h16"/><path class="ic-graph" pathLength="1" d="M7.5 15.5l3.5-4 3 2.5 5-6"/><path class="ic-graph-dot" d="M19 8h.01"/></svg><span class="panel-n">06</span></span>
+    </div>
+  </div>
+</div>    </div>
+  </div>
+</section>
+
+<!-- 5 · how we work: the sideways timeline (partials/process.html) -->
+<section class="section process" id="how-we-work" data-process>
+  <div class="container tl-shell">
+    <div class="tl-window">
+      <div class="tl-track" data-tl-track>
+        <span class="tl-axis" aria-hidden="true"><span class="tl-axis-fill" data-tl-fill></span></span>
+        <div class="tl-cover" data-tl-cover>
+          <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>04</span></p>
+          <h2 data-scramble>How we work</h2>
+          <p class="tl-lead">Tell us the problem. We build the fix.</p>
+        </div>
+        <ol class="tl-steps">
+          <li class="tl-step tl-up" data-tl-step>
+            <div class="tl-pin">
+              <span class="tl-stem" aria-hidden="true" data-tl-stem></span>
+              <span class="tl-dot" aria-hidden="true" data-tl-dot></span>
+              <div class="tl-card" data-tl-card>
+                <p class="tl-n"><span class="tk-com" aria-hidden="true">[1/4]</span></p>
+                <h3>Free 30-minute discovery call</h3>
+                <p class="tl-text" data-tl-text>You describe the problem. Together we pick one workflow your team repeats and map what happens today.</p>
+              </div>
+            </div>
+          </li>
+          <li class="tl-step tl-down" data-tl-step>
+            <div class="tl-pin">
+              <span class="tl-stem" aria-hidden="true" data-tl-stem></span>
+              <span class="tl-dot" aria-hidden="true" data-tl-dot></span>
+              <div class="tl-card" data-tl-card>
+                <p class="tl-n"><span class="tk-com" aria-hidden="true">[2/4]</span></p>
+                <h3>Agree the scope</h3>
+                <p class="tl-text" data-tl-text>You get a plain description of what will be automated, what stays manual, and what we need access to.</p>
+              </div>
+            </div>
+          </li>
+          <li class="tl-step tl-up" data-tl-step>
+            <div class="tl-pin">
+              <span class="tl-stem" aria-hidden="true" data-tl-stem></span>
+              <span class="tl-dot" aria-hidden="true" data-tl-dot></span>
+              <div class="tl-card" data-tl-card>
+                <p class="tl-n"><span class="tk-com" aria-hidden="true">[3/4]</span></p>
+                <h3>Build and test</h3>
+                <p class="tl-text" data-tl-text>We build it, test it with your real data, and adjust until it runs cleanly.</p>
+              </div>
+            </div>
+          </li>
+          <li class="tl-step tl-down" data-tl-step>
+            <div class="tl-pin">
+              <span class="tl-stem" aria-hidden="true" data-tl-stem></span>
+              <span class="tl-dot" aria-hidden="true" data-tl-dot></span>
+              <div class="tl-card" data-tl-card>
+                <p class="tl-n"><span class="tk-com" aria-hidden="true">[4/4]</span></p>
+                <h3>Hand over and review</h3>
+                <p class="tl-text" data-tl-text>Your team learns to use it, and we review it with you after it has run for a while.</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+        <div class="tl-end" data-tl-end>
+          <span class="tl-dot tl-dot-end" aria-hidden="true"></span>
+          <a class="btn btn-primary" href="contact/">Book a free 30-minute discovery call <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 6 · case studies (both clients signed off, 28 September 2026): a card per client; its link opens the whole case study
+     as a pop-up card (founder, the same day: "for case studies on the home page, there should be a link with pop up card
+     for all the details"), with no page of its own. The pop-ups are HTML popovers, so they open and close without
+     JavaScript too (Escape or a click outside closes them); console.js holds the page still while one is open. Inside:
+     the approved Stage 4a case study (eyebrow, tools, the problem, what we built, privacy by design; the quote, speaker
+     and the client's own site), word for word, no results figures, Nimblr's claims attributed to Nimblr. -->
+<section class="section cases-teaser" id="case-studies">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>05</span></p>
+      <h2 data-scramble>Real systems, running in real businesses.</h2>
+      <p data-typewriter>Our first two case studies come from healthcare practices. The same systems fit any business that books appointments or grows through referrals.</p>
+    </div>
+    <div class="case-cards">
+      <article class="case-card glow-card" data-reveal>
+        <span class="case-card-top"><span class="case-card-n" aria-hidden="true">01</span><span class="case-card-tools"><img class="cc-tool" src="assets/logos/holly-ai-nimblr.png" alt="" loading="lazy" decoding="async"><img class="cc-tool" src="assets/logos/modmed.png" alt="" loading="lazy" decoding="async"><img class="cc-tool plogo-word" src="assets/logos/ringcentral.png" alt="" loading="lazy" decoding="async"></span></span>
+        <h3>Eastside Podiatry PLLC</h3>
+        <p class="case-eyebrow">AI scheduling · ModMed EHR integration · HIPAA-compliant solution</p>
+        <p class="case-teaser">Patients at two locations now book 24/7 by phone or web, and appointments land in the EHR with no front-desk data entry.</p>
+        <button class="case-more" type="button" popovertarget="case-eastside-podiatry" aria-haspopup="dialog">Read the case study <span class="arrow" aria-hidden="true">→</span></button>
+      </article>
+      <article class="case-card glow-card" data-reveal>
+        <span class="case-card-top"><span class="case-card-n" aria-hidden="true">02</span><span class="case-card-tools"><img class="cc-tool" src="assets/logos/instantly-ai.png" alt="" loading="lazy" decoding="async"><img class="cc-tool" src="assets/logos/n8n-icon.svg" alt="" loading="lazy" decoding="async"></span></span>
+        <h3>NextGen Physical Therapy</h3>
+        <p class="case-eyebrow">Lead generation · referral outreach automation</p>
+        <p class="case-teaser">Automated outreach to doctors&#39; offices, other healthcare professionals and law firms, with the clinic answering only the interested replies.</p>
+        <button class="case-more" type="button" popovertarget="case-nextgen-physical-therapy" aria-haspopup="dialog">Read the case study <span class="arrow" aria-hidden="true">→</span></button>
+      </article>
+    </div>
+  </div>
+
+  <div class="case-pop" id="case-eastside-podiatry" popover role="dialog" aria-labelledby="case-eastside-podiatry-h" data-case-pop>
+    <button class="case-pop-close" type="button" popovertarget="case-eastside-podiatry" popovertargetaction="hide" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="case-pop-card" data-lenis-prevent>
+      <div class="case-head">
+        <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>01</span></p>
+        <h2 id="case-eastside-podiatry-h">Eastside Podiatry PLLC</h2>
+<p class="case-where">Metro Detroit, two locations</p>        <p class="case-eyebrow">AI scheduling · ModMed EHR integration · HIPAA-compliant solution</p>
+      </div>
+      <div class="case-grid">
+        <div class="case-story">
+          <div class="case-tools">
+            <p class="case-label">Tools</p>
+            <ul class="tool-chain" style="--n: 3" data-chain>
+              <li class="tool"><span class="mini-key"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/holly-ai-nimblr.png" alt="" loading="lazy" decoding="async"></span><span class="tool-name">Holly AI by Nimblr</span></li>
+              <li class="tool"><span class="mini-key"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/modmed.png" alt="" loading="lazy" decoding="async"></span><span class="tool-name">ModMed EHR</span></li>
+              <li class="tool"><span class="mini-key"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo plogo-word" src="assets/logos/ringcentral.png" alt="" loading="lazy" decoding="async"></span><span class="tool-name">RingCentral</span></li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h3 class="case-label">The problem</h3>
+            <p>A busy two-location podiatry group where every appointment ran through the front-desk phone lines. Every missed or after-hours call was a patient who might book elsewhere.</p>
+          </div>
+          <div class="case-block">
+            <h3 class="case-label">What we built</h3>
+            <p>Solutionz AI set up Holly AI, Nimblr&#39;s HIPAA-compliant AI scheduling assistant, and integrated it with the practice&#39;s ModMed EHR through their RingCentral phone system, then added online &#34;Schedule appointment&#34; booking for both locations. Patients now book 24/7 by phone or web, and appointments land in the EHR with no front-desk data entry.</p>
+          </div>
+          <aside class="case-privacy">
+            <span class="direct-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 9.5C8 19.3 5 15.5 5 11V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <div>
+              <h3 class="case-label">Privacy by design</h3>
+              <p>Holly handles each call inside its own system, which Nimblr states is HIPAA-compliant and SOC-certified, and processes only the information needed to book the appointment. Solutionz AI designed the workflow so patient information never leaves compliant systems.</p>
+            </div>
+          </aside>
+        </div>
+        <figure class="case-quote">
+          <blockquote><p>Our front desk was drowning in scheduling calls, and anything after five went to voicemail. Solutionz AI set up Holly for us and connected it to ModMed through our phones. Now patients book either office themselves, at any hour, and it lands straight in our schedule. Patient information stays inside ModMed and Holly, which mattered to me. My staff did not have to learn anything new.</p></blockquote>
+          <figcaption>
+            <span class="case-speaker">Dr. Siraj Panchbhaiya, DPM, FACFAS, Eastside Podiatry</span>
+            <a class="case-proof" href="https://podeastside.com" target="_blank" rel="noopener">podeastside.com <span class="arrow" aria-hidden="true">↗</span></a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+  <div class="case-pop" id="case-nextgen-physical-therapy" popover role="dialog" aria-labelledby="case-nextgen-physical-therapy-h" data-case-pop>
+    <button class="case-pop-close" type="button" popovertarget="case-nextgen-physical-therapy" popovertargetaction="hide" aria-label="Close">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="case-pop-card" data-lenis-prevent>
+      <div class="case-head">
+        <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>02</span></p>
+        <h2 id="case-nextgen-physical-therapy-h">NextGen Physical Therapy</h2>
+        <p class="case-eyebrow">Lead generation · referral outreach automation</p>
+      </div>
+      <div class="case-grid">
+        <div class="case-story">
+          <div class="case-tools">
+            <p class="case-label">Tools</p>
+            <ul class="tool-chain" style="--n: 2" data-chain>
+              <li class="tool"><span class="mini-key"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/instantly-ai.png" alt="" loading="lazy" decoding="async"></span><span class="tool-name">Instantly AI</span></li>
+              <li class="tool"><span class="mini-key"><i class="screw"></i><i class="screw"></i><i class="screw"></i><i class="screw"></i><img class="mk-logo" src="assets/logos/n8n-icon.svg" alt="" loading="lazy" decoding="async"></span><span class="tool-name">n8n</span></li>
+            </ul>
+          </div>
+          <div class="case-block">
+            <h3 class="case-label">The problem</h3>
+            <p>A physical therapy clinic grows through referral relationships with doctors&#39; offices, other healthcare professionals and law firms in its area. Building those relationships takes consistent outreach that owners and staff rarely have time for.</p>
+          </div>
+          <div class="case-block">
+            <h3 class="case-label">What we built</h3>
+            <p>Solutionz AI built an automated outreach system for the clinic. It finds doctors&#39; offices, other healthcare professionals and law firms in the practice&#39;s market, sends personalized introduction emails on NextGen PT&#39;s behalf, and follows up automatically. The clinic answers the interested replies.</p>
+          </div>
+        </div>
+        <figure class="case-quote">
+          <blockquote><p>Referrals are how a PT clinic grows, and I never had time to do the outreach. Solutionz AI built a system that finds doctors&#39; offices, other healthcare professionals and law firms around us, sends the first email and the follow-ups, and I just reply when someone is interested. It is the first time outreach has actually happened every week.</p></blockquote>
+          <figcaption>
+            <span class="case-speaker">Leith Danou, Owner, NextGen Physical Therapy</span>
+            <a class="case-proof" href="https://ptnextgen.com" target="_blank" rel="noopener">ptnextgen.com <span class="arrow" aria-hidden="true">↗</span></a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · platforms: the five groups as a code object; the names float in two columns beside it at three depths -->
+<section class="section platforms" id="platforms" data-platforms>
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="code-label"><span class="tk-com" aria-hidden="true">//</span> <span>06</span></p>
+      <h2 data-scramble>Platforms we build on</h2>
+      <p data-typewriter>Tools we use in client work, grouped by what they do. Where a system allows connections, we can usually connect it; where it does not, we say so on the discovery call.</p>
+    </div>
+    <div class="cloud">
+      <ul class="cloud-col cloud-left" aria-hidden="true">
+        <li class="cloud-chip" style="--o: 0.0rem" data-depth="0.3"><img class="cc-logo" src="assets/logos/n8n-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> n8n <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 1.1rem" data-depth="0.65"><img class="cc-logo" src="assets/logos/google-antigravity.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Google Antigravity <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 2.2rem" data-depth="1.0"><img class="cc-logo plogo-mono" src="assets/logos/openai-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> OpenAI <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 0.0rem" data-depth="0.3"><img class="cc-logo" src="assets/logos/google-gemini-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Gemini (Google) <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 1.1rem" data-depth="0.65"><img class="cc-logo" src="assets/logos/higgsfield.png" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Higgsfield <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 2.2rem" data-depth="1.0"><img class="cc-logo plogo-mono" src="assets/logos/elevenlabs-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> ElevenLabs <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 0.0rem" data-depth="0.3"><img class="cc-logo" src="assets/logos/modmed.png" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> ModMed <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 1.1rem" data-depth="0.65"><img class="cc-logo" src="assets/logos/salesforce.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Salesforce <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 2.2rem" data-depth="1.0"><img class="cc-logo" src="assets/logos/microsoft-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Microsoft 365 and Azure <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 0.0rem" data-depth="0.3"><img class="cc-logo plogo-mono" src="assets/logos/retool-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Retool <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 1.1rem" data-depth="0.65"><img class="cc-logo" src="assets/logos/microsoft-outlook.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Microsoft Outlook <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 2.2rem" data-depth="1.0"><img class="cc-logo" src="assets/logos/google-meet.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Google Meet <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 0.0rem" data-depth="0.3"><img class="cc-logo" src="assets/logos/telegram.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Telegram <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 1.1rem" data-depth="0.65"><img class="cc-logo plogo-mono" src="assets/logos/typeform-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Typeform <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 2.2rem" data-depth="1.0"><img class="cc-logo" src="assets/logos/hostinger.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Hostinger <span class="tk-com">//</span></li>
+      </ul>
+      <ul class="cloud-col cloud-right" aria-hidden="true">
+        <li class="cloud-chip" style="--o: 0.0rem" data-depth="0.65"><img class="cc-logo plogo-word" src="assets/logos/zapier-dark.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Zapier <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 1.1rem" data-depth="1.0"><img class="cc-logo" src="assets/logos/vs-code.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> VS Code <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 2.2rem" data-depth="0.3"><img class="cc-logo" src="assets/logos/claude-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Claude (Anthropic) <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 0.0rem" data-depth="0.65"><img class="cc-logo" src="assets/logos/microsoft-copilot.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Microsoft Copilot <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 1.1rem" data-depth="1.0"><img class="cc-logo plogo-mono" src="assets/logos/retell-ai.png" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Retell AI <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 2.2rem" data-depth="0.3"><img class="cc-logo" src="assets/logos/holly-ai-nimblr.png" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Holly AI by Nimblr <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 0.0rem" data-depth="0.65"><img class="cc-logo plogo-word" src="assets/logos/ringcentral.png" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> RingCentral <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 1.1rem" data-depth="1.0"><img class="cc-logo" src="assets/logos/monday-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> monday.com <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 2.2rem" data-depth="0.3"><img class="cc-logo" src="assets/logos/google-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Google Workspace <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 0.0rem" data-depth="0.65"><img class="cc-logo" src="assets/logos/google-gmail.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Gmail <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 1.1rem" data-depth="1.0"><img class="cc-logo" src="assets/logos/microsoft-teams.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Microsoft Teams <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 2.2rem" data-depth="0.3"><img class="cc-logo" src="assets/logos/slack-icon.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Slack <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 0.0rem" data-depth="0.65"><img class="cc-logo" src="assets/logos/instantly-ai.png" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Instantly AI <span class="tk-com">//</span></li>
+        <li class="cloud-chip" style="--o: 1.1rem" data-depth="1.0"><img class="cc-logo plogo-mono plogo-word" src="assets/logos/wix.svg" alt="" loading="lazy" decoding="async"><span class="tk-com">//</span> Wix <span class="tk-com">//</span></li>
+      </ul>
+      <figure class="code-card platform-card">
+        <figcaption class="code-bar"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="code-file">platforms.json</span></figcaption>
+        <div class="code">
+          <p class="cl"><span class="tk-p">{</span></p>
+          <div class="platform-row" data-platform-row>
+            <p class="pr-key"><span class="tk-p">"</span><span class="tk-key">Automation</span><span class="tk-p">": [</span></p>
+            <ul class="chips"><li class="chip" data-chip>n8n</li><li class="chip" data-chip>Zapier</li><li class="chip" data-chip>Google Antigravity</li><li class="chip" data-chip>VS Code</li></ul>
+            <p class="pr-end"><span class="tk-p">]</span></p>
+          </div>
+          <div class="platform-row" data-platform-row>
+            <p class="pr-key"><span class="tk-p">"</span><span class="tk-key">AI models and agents</span><span class="tk-p">": [</span></p>
+            <ul class="chips"><li class="chip" data-chip>OpenAI</li><li class="chip" data-chip>Claude (Anthropic)</li><li class="chip" data-chip>Gemini (Google)</li><li class="chip" data-chip>Microsoft Copilot</li><li class="chip" data-chip>Higgsfield</li><li class="chip" data-chip>Retell AI</li><li class="chip" data-chip>ElevenLabs</li></ul>
+            <p class="pr-end"><span class="tk-p">]</span></p>
+          </div>
+          <div class="platform-row" data-platform-row>
+            <p class="pr-key"><span class="tk-p">"</span><span class="tk-key">Healthcare and phones</span><span class="tk-p">": [</span></p>
+            <ul class="chips"><li class="chip" data-chip>Holly AI by Nimblr</li><li class="chip" data-chip>ModMed</li><li class="chip" data-chip>RingCentral</li></ul>
+            <p class="pr-end"><span class="tk-p">]</span></p>
+          </div>
+          <div class="platform-row" data-platform-row>
+            <p class="pr-key"><span class="tk-p">"</span><span class="tk-key">Business systems</span><span class="tk-p">": [</span></p>
+            <ul class="chips"><li class="chip" data-chip>Salesforce</li><li class="chip" data-chip>monday.com</li><li class="chip" data-chip>Microsoft 365 and Azure</li><li class="chip" data-chip>Google Workspace</li><li class="chip" data-chip>Retool</li></ul>
+            <p class="pr-end"><span class="tk-p">]</span></p>
+          </div>
+          <div class="platform-row" data-platform-row>
+            <p class="pr-key"><span class="tk-p">"</span><span class="tk-key">Email, meetings and chat</span><span class="tk-p">": [</span></p>
+            <ul class="chips"><li class="chip" data-chip>Gmail</li><li class="chip" data-chip>Microsoft Outlook</li><li class="chip" data-chip>Microsoft Teams</li><li class="chip" data-chip>Google Meet</li><li class="chip" data-chip>Slack</li><li class="chip" data-chip>Telegram</li></ul>
+            <p class="pr-end"><span class="tk-p">]</span></p>
+          </div>
+          <div class="platform-row" data-platform-row>
+            <p class="pr-key"><span class="tk-p">"</span><span class="tk-key">Outreach, forms and web</span><span class="tk-p">": [</span></p>
+            <ul class="chips"><li class="chip" data-chip>Instantly AI</li><li class="chip" data-chip>Typeform</li><li class="chip" data-chip>Wix</li><li class="chip" data-chip>Hostinger</li></ul>
+            <p class="pr-end"><span class="tk-p">]</span></p>
+          </div>
+          <p class="cl"><span class="tk-p">}</span></p>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
+</div><!-- /rain-zone -->
+
+<div class="lower" id="lower">
+<!-- green band: the six service names run across the screen; they speed up and change direction with the scroll -->
+<section class="green-marquee" aria-label="What we automate">
+  <div class="marquee-track" data-marquee>
+    <ul class="marquee-row">
+<li><a href="services/automation/">Business Automation</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/integration/">Software Integration</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/ai-agents/">AI Agents &amp; Assistants</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/websites-seo/">Websites &amp; SEO</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/marketing/">Marketing &amp; Lead Generation</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/dashboards/">Custom Dashboards &amp; Reporting</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li>    </ul>
+    <ul class="marquee-row" aria-hidden="true">
+<li><a href="services/automation/" tabindex="-1">Business Automation</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/integration/" tabindex="-1">Software Integration</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/ai-agents/" tabindex="-1">AI Agents &amp; Assistants</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/websites-seo/" tabindex="-1">Websites &amp; SEO</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/marketing/" tabindex="-1">Marketing &amp; Lead Generation</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/dashboards/" tabindex="-1">Custom Dashboards &amp; Reporting</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li>    </ul>
+    <ul class="marquee-row" aria-hidden="true">
+<li><a href="services/automation/" tabindex="-1">Business Automation</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/integration/" tabindex="-1">Software Integration</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/ai-agents/" tabindex="-1">AI Agents &amp; Assistants</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/websites-seo/" tabindex="-1">Websites &amp; SEO</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/marketing/" tabindex="-1">Marketing &amp; Lead Generation</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li><li><a href="services/dashboards/" tabindex="-1">Custom Dashboards &amp; Reporting</a><svg class="marquee-mark" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 0l2.6 7.4L20 10l-7.4 2.6L10 20l-2.6-7.4L0 10l7.4-2.6z"/></svg></li>    </ul>
+  </div>
+</section><!-- the founder block -->
+<section class="section about-band" id="about">
+  <div class="container about-grid">
+    <div class="reveal-up">
+      <h2 data-split>Operations experience first, automation second.</h2>
+      <p class="lead">Solutionz AI is an AI automation agency working with businesses across the United States. Founder Asad Shoaib spent more than 15 years in healthcare operations, watching capable teams lose hours every week to re-typing, chasing and rescheduling, and eventually building the automations to stop it.</p>
+      <a class="more" href="about/">More about us and the founder</a>
+    </div>
+    <div class="portrait reveal-up" style="--i: 2" data-portrait>
+      <picture>
+        <source type="image/webp" srcset="assets/img/asad-shoaib-480.webp 480w, assets/img/asad-shoaib-800.webp 800w" sizes="(max-width: 1023px) 320px, 380px">
+        <img src="assets/img/asad-shoaib-800.jpg" srcset="assets/img/asad-shoaib-480.jpg 480w, assets/img/asad-shoaib-800.jpg 800w" sizes="(max-width: 1023px) 320px, 380px" width="800" height="1000" alt="Asad Shoaib, founder of Solutionz AI" loading="lazy" decoding="async" data-portrait-img>
+      </picture>
+    </div>
+  </div>
+</section><section class="section navy-band" id="questions">
+  <div class="container">
+    <div class="section-head reveal-up"><h2 data-split>Questions we hear most</h2></div>
+    <div class="faq faq-cols">
+      <div class="faq-col">
+        <details class="glow-card reveal-up" style="--i: 0"><summary>What does an AI automation agency do?</summary><p>Solutionz AI builds automations and connects business software so routine work runs without people re-typing, chasing or copying between tools. That covers scheduled invoicing, appointment booking, lead follow-up, AI voice and chat agents, websites, marketing systems and dashboards. Each build is made for your process, not sold off the shelf.</p></details>
+        <details class="glow-card reveal-up" style="--i: 1"><summary>Which industries do you work with?</summary><p>Any business whose team repeats the same administrative work every week. Our first case studies are healthcare practices, because that is where the founder spent 15 years, and the same systems fit clinics, trades, professional services, retail and agencies alike.</p></details>
+        <details class="glow-card reveal-up" style="--i: 2"><summary>Will it work with the software we already use?</summary><p>Usually, yes. We build on automation platforms such as n8n and Zapier and on native connections, which link to most CRMs, calendars, accounting tools, email and practice-management systems. Where a system allows connections we can usually connect it; where it does not, we tell you on the discovery call.</p></details>
+        <details class="glow-card reveal-up" style="--i: 3"><summary>How much does it cost?</summary><p>Each project is quoted after the free discovery call, with a fixed scope and a fixed price for the build. Ongoing monitoring and improvements are optional and quoted separately. We do not bill open-ended hours.</p></details>
+        <details class="glow-card reveal-up" style="--i: 4"><summary>How long does it take?</summary><p>It depends on the workflow and how many systems are involved. We agree a scope and a delivery date before work starts, and we tell you if either changes.</p></details>
+      </div>
+      <div class="faq-col">
+        <details class="glow-card reveal-up" style="--i: 0"><summary>Do we need technical staff to run it?</summary><p>No. Every build comes with plain documentation and a walkthrough for your team, and someone on your side can always see it, pause it or take over. You own what we build.</p></details>
+        <details class="glow-card reveal-up" style="--i: 1"><summary>Is our data safe? Can you build HIPAA-compliant solutions?</summary><p>Yes. For healthcare clients we build HIPAA-compliant solutions on platforms that are themselves HIPAA-compliant, such as Holly AI by Nimblr for scheduling, which Nimblr states is HIPAA-compliant and SOC-certified, and we design the workflow so protected health information never leaves those systems. Ask us how this applies to the systems you use.</p></details>
+        <details class="glow-card reveal-up" style="--i: 2"><summary>How is your SEO different from a marketing agency&#39;s?</summary><p>Most SEO aims to get you into Google&#39;s list of links. We also work on getting you into the answer: when someone asks Google, ChatGPT or Perplexity for a business like yours, we want you named. Our AI Visibility Audit checks both and gives you a 90-day plan. Some people call this AEO or GEO; we call it being found.</p></details>
+        <details class="glow-card reveal-up" style="--i: 3"><summary>What happens on the discovery call?</summary><p>Thirty minutes, free. You describe the problem, we pick one workflow your team repeats, and you leave with a plain summary of what could be automated and what it would involve, whether or not you hire us.</p></details>
+        <details class="glow-card reveal-up" style="--i: 4"><summary>What if automation is not right for us?</summary><p>We tell you. If the workflow is too small, too irregular, or better fixed another way, you hear that on the call.</p></details>
+      </div>
+    </div>
+  </div>
+</section><!-- green band: the closing invitation, giant navy type and two action cards -->
+<section class="green-close" id="start">
+  <div class="container green-close-grid">
+    <h2 class="green-close-h" data-split>Ready for less manual work?</h2>
+    <div class="green-close-side">
+      <p class="green-close-text reveal-up" data-typewriter>Thirty minutes, free. You describe the problem, we pick one workflow your team repeats, and you leave with a plain summary of what could be automated, whether or not you hire us.</p>
+      <a class="action-card reveal-up" style="--i: 1" href="contact/">
+        <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="action-label">Book a free 30-minute discovery call <span class="arrow" aria-hidden="true">↗</span></span>
+      </a>
+      <a class="action-card reveal-up" style="--i: 2" href="mailto:info@solutionzai.com">
+        <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        <span class="action-label">Or email info@solutionzai.com <span class="arrow" aria-hidden="true">↗</span></span>
+      </a>
+    </div>
+  </div>
+</section></div></main>
+<footer class="site-footer sz-footer" id="site-footer">
+  <div class="sz-footer-glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="sz-footer-word"><svg class="footer-wordmark" viewBox="180 678 1170 136" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false"><g transform="translate(181.3125 805)"><g class="fw-l" style="--d:1.000"><path d="M74 477 L362 505 Q388 360 467.5 292.0 Q547 224 682 224 Q825 224 897.5 284.5 Q970 345 970 426 Q970 478 939.5 514.5 Q909 551 833 578 Q781 596 596 642 Q358 701 262 787 Q127 908 127 1082 Q127 1194 190.5 1291.5 Q254 1389 373.5 1440.0 Q493 1491 662 1491 Q938 1491 1077.5 1370.0 Q1217 1249 1224 1047 L928 1034 Q909 1147 846.5 1196.5 Q784 1246 659 1246 Q530 1246 457 1193 Q410 1159 410 1102 Q410 1050 454 1013 Q510 966 726.0 915.0 Q942 864 1045.5 809.5 Q1149 755 1207.5 660.5 Q1266 566 1266 427 Q1266 301 1196.0 191.0 Q1126 81 998.0 27.5 Q870 -26 679 -26 Q401 -26 252.0 102.5 Q103 231 74 477 Z" transform="translate(0.0000 0) scale(0.0781250 -0.0781250)" fill="#043377"/></g><g class="fw-l" style="--d:0.800"><path d="M89 724 Q89 948 156 1100 Q206 1212 292.5 1301.0 Q379 1390 482 1433 Q619 1491 798 1491 Q1122 1491 1316.5 1290.0 Q1511 1089 1511 731 Q1511 376 1318.0 175.5 Q1125 -25 802 -25 Q475 -25 282.0 174.5 Q89 374 89 724 Z M394 734 Q394 485 509.0 356.5 Q624 228 801 228 Q978 228 1091.5 355.5 Q1205 483 1205 738 Q1205 990 1094.5 1114.0 Q984 1238 801 1238 Q618 1238 506.0 1112.5 Q394 987 394 734 Z" transform="translate(112.2188 0) scale(0.0781250 -0.0781250)" fill="#043377"/></g><g class="fw-l" style="--d:0.600"><path d="M157 0 L157 1454 L453 1454 L453 247 L1189 247 L1189 0 L157 0 Z" transform="translate(242.1719 0) scale(0.0781250 -0.0781250)" fill="#043377"/></g><g class="fw-l" style="--d:0.400"><path d="M147 1466 L443 1466 L443 672 Q443 483 454 427 Q473 337 544.5 282.5 Q616 228 740 228 Q866 228 930.0 279.5 Q994 331 1007.0 406.0 Q1020 481 1020 655 L1020 1466 L1316 1466 L1316 696 Q1316 432 1292.0 323.0 Q1268 214 1203.5 139.0 Q1139 64 1031.0 19.5 Q923 -25 749 -25 Q539 -25 430.5 23.5 Q322 72 259.0 149.5 Q196 227 176 312 Q147 438 147 684 L147 1466 Z" transform="translate(345.4062 0) scale(0.0781250 -0.0781250)" fill="#043377"/></g><g class="fw-l" style="--d:0.200"><path d="M479 0 L479 1218 L44 1218 L44 1466 L1209 1466 L1209 1218 L775 1218 L775 0 L479 0 Z" transform="translate(466.4531 0) scale(0.0781250 -0.0781250)" fill="#043377"/></g><g class="fw-l" style="--d:0.000"><path d="M140 0 L140 1466 L436 1466 L436 0 L140 0 Z" transform="translate(569.6875 0) scale(0.0781250 -0.0781250)" fill="#043377"/></g><g class="fw-l" style="--d:0.200"><path d="M89 724 Q89 948 156 1100 Q206 1212 292.5 1301.0 Q379 1390 482 1433 Q619 1491 798 1491 Q1122 1491 1316.5 1290.0 Q1511 1089 1511 731 Q1511 376 1318.0 175.5 Q1125 -25 802 -25 Q475 -25 282.0 174.5 Q89 374 89 724 Z M394 734 Q394 485 509.0 356.5 Q624 228 801 228 Q978 228 1091.5 355.5 Q1205 483 1205 738 Q1205 990 1094.5 1114.0 Q984 1238 801 1238 Q618 1238 506.0 1112.5 Q394 987 394 734 Z" transform="translate(619.6406 0) scale(0.0781250 -0.0781250)" fill="#043377"/></g><g class="fw-l" style="--d:0.400"><path d="M152 0 L152 1466 L440 1466 L1040 487 L1040 1466 L1315 1466 L1315 0 L1018 0 L427 956 L427 0 L152 0 Z" transform="translate(749.5938 0) scale(0.0781250 -0.0781250)" fill="#043377"/></g><g class="fw-l" style="--d:0.600"><path d="M22 0 L22 267 L792 1218 L109 1218 L109 1466 L1182 1466 L1182 1236 L379 247 L1213 247 L1213 0 L22 0 Z" transform="translate(870.6406 0) scale(0.0781250 -0.0781250)" fill="#043377"/></g><g class="fw-l" style="--d:0.800"><path d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(1000.3750 0) scale(0.0820312 -0.0820312)" fill="#42CE33"/></g><g class="fw-l" style="--d:1.000"><path d="M140 0 L140 1466 L436 1466 L436 0 L140 0 Z" transform="translate(1126.6992 0) scale(0.0820312 -0.0820312)" fill="#42CE33"/></g></g></svg></div>
+    <div class="sz-footer-panel">
+      <div class="sz-footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="" aria-label="Solutionz AI, home"><svg class="logo-svg" viewBox="0 0 1646.9 255.0" aria-hidden="true" focusable="false"><g class="lg-sym" transform="translate(6 6.00) scale(0.49897)"><path class="lg-f lg-f1 lg-ink" d="M0 487 L312 0 L397 143 L176 487 Z"/><path class="lg-f lg-f2 lg-green" d="M357 305 L460 405 L406 487 L250 487 Z"/><path class="lg-f lg-f3 lg-ink" d="M357 305 H500 L540 487 Z"/><path class="lg-f lg-f4 lg-green" d="M312 0 H470 L716 487 H540 Z"/></g><g class="lg-txt" transform="translate(466.89 142.75)"><g class="lg-l"><path class="lg-ink" d="M74 477 L362 505 Q388 360 467.5 292.0 Q547 224 682 224 Q825 224 897.5 284.5 Q970 345 970 426 Q970 478 939.5 514.5 Q909 551 833 578 Q781 596 596 642 Q358 701 262 787 Q127 908 127 1082 Q127 1194 190.5 1291.5 Q254 1389 373.5 1440.0 Q493 1491 662 1491 Q938 1491 1077.5 1370.0 Q1217 1249 1224 1047 L928 1034 Q909 1147 846.5 1196.5 Q784 1246 659 1246 Q530 1246 457 1193 Q410 1159 410 1102 Q410 1050 454 1013 Q510 966 726.0 915.0 Q942 864 1045.5 809.5 Q1149 755 1207.5 660.5 Q1266 566 1266 427 Q1266 301 1196.0 191.0 Q1126 81 998.0 27.5 Q870 -26 679 -26 Q401 -26 252.0 102.5 Q103 231 74 477 Z" transform="translate(0.0000 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M89 724 Q89 948 156 1100 Q206 1212 292.5 1301.0 Q379 1390 482 1433 Q619 1491 798 1491 Q1122 1491 1316.5 1290.0 Q1511 1089 1511 731 Q1511 376 1318.0 175.5 Q1125 -25 802 -25 Q475 -25 282.0 174.5 Q89 374 89 724 Z M394 734 Q394 485 509.0 356.5 Q624 228 801 228 Q978 228 1091.5 355.5 Q1205 483 1205 738 Q1205 990 1094.5 1114.0 Q984 1238 801 1238 Q618 1238 506.0 1112.5 Q394 987 394 734 Z" transform="translate(112.2188 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M157 0 L157 1454 L453 1454 L453 247 L1189 247 L1189 0 L157 0 Z" transform="translate(242.1719 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M147 1466 L443 1466 L443 672 Q443 483 454 427 Q473 337 544.5 282.5 Q616 228 740 228 Q866 228 930.0 279.5 Q994 331 1007.0 406.0 Q1020 481 1020 655 L1020 1466 L1316 1466 L1316 696 Q1316 432 1292.0 323.0 Q1268 214 1203.5 139.0 Q1139 64 1031.0 19.5 Q923 -25 749 -25 Q539 -25 430.5 23.5 Q322 72 259.0 149.5 Q196 227 176 312 Q147 438 147 684 L147 1466 Z" transform="translate(345.4062 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M479 0 L479 1218 L44 1218 L44 1466 L1209 1466 L1209 1218 L775 1218 L775 0 L479 0 Z" transform="translate(466.4531 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M140 0 L140 1466 L436 1466 L436 0 L140 0 Z" transform="translate(569.6875 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M89 724 Q89 948 156 1100 Q206 1212 292.5 1301.0 Q379 1390 482 1433 Q619 1491 798 1491 Q1122 1491 1316.5 1290.0 Q1511 1089 1511 731 Q1511 376 1318.0 175.5 Q1125 -25 802 -25 Q475 -25 282.0 174.5 Q89 374 89 724 Z M394 734 Q394 485 509.0 356.5 Q624 228 801 228 Q978 228 1091.5 355.5 Q1205 483 1205 738 Q1205 990 1094.5 1114.0 Q984 1238 801 1238 Q618 1238 506.0 1112.5 Q394 987 394 734 Z" transform="translate(619.6406 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M152 0 L152 1466 L440 1466 L1040 487 L1040 1466 L1315 1466 L1315 0 L1018 0 L427 956 L427 0 L152 0 Z" transform="translate(749.5938 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-ink" d="M22 0 L22 267 L792 1218 L109 1218 L109 1466 L1182 1466 L1182 1236 L379 247 L1213 247 L1213 0 L22 0 Z" transform="translate(870.6406 0) scale(0.0781250 -0.0781250)"/></g><g class="lg-l"><path class="lg-green" d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(1000.3750 0) scale(0.0820312 -0.0820312)"/></g><g class="lg-l"><path class="lg-green" d="M140 0 L140 1466 L436 1466 L436 0 L140 0 Z" transform="translate(1126.6992 0) scale(0.0820312 -0.0820312)"/></g><g class="lg-d"><path class="lg-ink" d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(0.0000 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M140 0 L140 1466 L436 1466 L436 0 L140 0 Z" transform="translate(64.5617 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(151.0288 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M147 1466 L443 1466 L443 672 Q443 483 454 427 Q473 337 544.5 282.5 Q616 228 740 228 Q866 228 930.0 279.5 Q994 331 1007.0 406.0 Q1020 481 1020 655 L1020 1466 L1316 1466 L1316 696 Q1316 432 1292.0 323.0 Q1268 214 1203.5 139.0 Q1139 64 1031.0 19.5 Q923 -25 749 -25 Q539 -25 430.5 23.5 Q322 72 259.0 149.5 Q196 227 176 312 Q147 438 147 684 L147 1466 Z" transform="translate(215.5905 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M479 0 L479 1218 L44 1218 L44 1466 L1209 1466 L1209 1218 L775 1218 L775 0 L479 0 Z" transform="translate(280.1521 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M89 724 Q89 948 156 1100 Q206 1212 292.5 1301.0 Q379 1390 482 1433 Q619 1491 798 1491 Q1122 1491 1316.5 1290.0 Q1511 1089 1511 731 Q1511 376 1318.0 175.5 Q1125 -25 802 -25 Q475 -25 282.0 174.5 Q89 374 89 724 Z M394 734 Q394 485 509.0 356.5 Q624 228 801 228 Q978 228 1091.5 355.5 Q1205 483 1205 738 Q1205 990 1094.5 1114.0 Q984 1238 801 1238 Q618 1238 506.0 1112.5 Q394 987 394 734 Z" transform="translate(339.3701 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M145 0 L145 1466 L588 1466 L854 466 L1117 1466 L1561 1466 L1561 0 L1286 0 L1286 1154 L995 0 L710 0 L420 1154 L420 0 L145 0 Z" transform="translate(406.6036 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(476.4856 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M479 0 L479 1218 L44 1218 L44 1466 L1209 1466 L1209 1218 L775 1218 L775 0 L479 0 Z" transform="translate(541.0473 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M140 0 L140 1466 L436 1466 L436 0 L140 0 Z" transform="translate(600.2652 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M89 724 Q89 948 156 1100 Q206 1212 292.5 1301.0 Q379 1390 482 1433 Q619 1491 798 1491 Q1122 1491 1316.5 1290.0 Q1511 1089 1511 731 Q1511 376 1318.0 175.5 Q1125 -25 802 -25 Q475 -25 282.0 174.5 Q89 374 89 724 Z M394 734 Q394 485 509.0 356.5 Q624 228 801 228 Q978 228 1091.5 355.5 Q1205 483 1205 738 Q1205 990 1094.5 1114.0 Q984 1238 801 1238 Q618 1238 506.0 1112.5 Q394 987 394 734 Z" transform="translate(643.4988 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M152 0 L152 1466 L440 1466 L1040 487 L1040 1466 L1315 1466 L1315 0 L1018 0 L427 956 L427 0 L152 0 Z" transform="translate(710.7323 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M1471 0 L1149 0 L1021 333 L435 333 L314 0 L0 0 L571 1466 L884 1466 L1471 0 Z M926 580 L724 1124 L526 580 L926 580 Z" transform="translate(818.5275 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M831 539 L831 786 L1469 786 L1469 202 Q1376 112 1199.5 43.5 Q1023 -25 842 -25 Q612 -25 441.0 71.5 Q270 168 184.0 347.5 Q98 527 98 738 Q98 967 194.0 1145.0 Q290 1323 475 1418 Q616 1491 826 1491 Q1099 1491 1252.5 1376.5 Q1406 1262 1450 1060 L1156 1005 Q1125 1113 1039.5 1175.5 Q954 1238 826 1238 Q632 1238 517.5 1115.0 Q403 992 403 750 Q403 489 519.0 358.5 Q635 228 823 228 Q916 228 1009.5 264.5 Q1103 301 1170 353 L1170 539 L831 539 Z" transform="translate(883.0892 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M149 0 L149 1466 L1236 1466 L1236 1218 L445 1218 L445 893 L1181 893 L1181 646 L445 646 L445 247 L1264 247 L1264 0 L149 0 Z" transform="translate(950.3228 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M152 0 L152 1466 L440 1466 L1040 487 L1040 1466 L1315 1466 L1315 0 L1018 0 L427 956 L427 0 L152 0 Z" transform="translate(1012.2360 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M1087 539 L1374 448 Q1308 208 1154.5 91.5 Q1001 -25 765 -25 Q473 -25 285.0 174.5 Q97 374 97 720 Q97 1086 286.0 1288.5 Q475 1491 783 1491 Q1052 1491 1220 1332 Q1320 1238 1370 1062 L1077 992 Q1051 1106 968.5 1172.0 Q886 1238 768 1238 Q605 1238 503.5 1121.0 Q402 1004 402 742 Q402 464 502.0 346.0 Q602 228 762 228 Q880 228 965.0 303.0 Q1050 378 1087 539 Z" transform="translate(1076.7977 84) scale(0.0234375 -0.0234375)"/></g><g class="lg-d"><path class="lg-ink" d="M534 0 L534 617 L-3 1466 L344 1466 L689 886 L1027 1466 L1368 1466 L829 615 L829 0 L534 0 Z" transform="translate(1141.3594 84) scale(0.0234375 -0.0234375)"/></g></g></svg></a>
+          <p class="rise"><span>Solutionz AI is an AI automation agency that helps businesses cut repetitive work with workflow automation, software integration, AI agents, websites and reporting.</span></p>
+          <p class="rise"><span>Working with businesses across the United States.</span></p>
+        </div>
+        <div>
+          <h3 class="rise"><span>Services</span></h3>
+          <ul>
+<li class="rise" style="--i: 1"><span><a href="services/automation/">Business Automation</a></span></li><li class="rise" style="--i: 2"><span><a href="services/integration/">Software Integration</a></span></li><li class="rise" style="--i: 3"><span><a href="services/ai-agents/">AI Agents &amp; Assistants</a></span></li><li class="rise" style="--i: 4"><span><a href="services/websites-seo/">Websites &amp; SEO</a></span></li><li class="rise" style="--i: 5"><span><a href="services/marketing/">Marketing &amp; Lead Generation</a></span></li><li class="rise" style="--i: 6"><span><a href="services/dashboards/">Custom Dashboards &amp; Reporting</a></span></li>          </ul>
+        </div>
+        <div>
+          <h3 class="rise"><span>Company</span></h3>
+          <ul>
+            <li class="rise" style="--i: 1"><span><a href="about/">About</a></span></li>
+<li class="rise" style="--i: 2"><span><a href="#case-studies">Case studies</a></span></li>            <li class="rise" style="--i: 3"><span><a href="#questions">Questions and answers</a></span></li>
+            <li class="rise" style="--i: 4"><span><a href="contact/">Contact</a></span></li>
+            <li class="rise" style="--i: 5"><span><a href="privacy/">Privacy policy</a></span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="rise"><span>Contact</span></h3>
+          <ul>
+            <li class="rise" style="--i: 1"><span><a href="tel:+15868406336">(586) 840-6336</a></span></li>
+            <li class="rise" style="--i: 2"><span><a href="mailto:info@solutionzai.com">info@solutionzai.com</a></span></li>
+          </ul>
+          <a class="btn btn-primary sz-footer-cta" href="contact/">Book a free 30-minute discovery call</a>
+        </div>
+      </div>
+      <div class="footer-bottom sz-footer-bottom">
+        <span class="rise"><span>© 2026 SOLUTIONZ AI LLC. All rights reserved.</span></span>
+      </div>
+    </div>
+  </div>
+</footer><div class="scroll-progress" aria-hidden="true"><i data-scroll-progress></i></div>
+<button class="to-top" type="button" aria-label="Back to top" data-to-top><svg viewBox="0 0 24 23" aria-hidden="true" focusable="false"><path class="tt-1" d="M6 11l6-6 6 6"/><path class="tt-2" d="M6 18l6-6 6 6"/></svg></button>
+<div class="cursor-light" aria-hidden="true"></div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+Official-colour platform logos for the platforms strip and the workflow keys (Site A "Console"), from the SVG Logos
+collection by Gil Barbara (https://github.com/gilbarbara/logos), CC0 1.0, fetched 25 September 2026 from
+https://cdn.jsdelivr.net/gh/gilbarbara/logos@main/logos/<name>.svg. zapier-dark.svg is zapier.svg with the black
+lettering set white, as in Zapier's own dark-background wordmark. Every mark stays a trademark of its owner and is used
+only to name a platform Solutionz AI builds on (tools/site_content.py PLATFORM_GROUPS), never to suggest a partnership
+or endorsement. No logo in the collection: Retell AI, Holly AI by Nimblr, ModMed, RingCentral, Instantly AI (their own files were added on
+26 September 2026, below).
+Added 25 September 2026 (the founder asked for Microsoft Teams, Microsoft Outlook, Gmail, Google Meet and Telegram):
+  telegram.svg      the SVG Logos collection (as above)
+  google-meet.svg   the collection's google-meet-2020.svg, the multicolour camera people know (the collection's newer
+                    google-meet.svg, a yellow camera, is not the widely recognised mark)
+  microsoft-outlook.svg, microsoft-teams.svg   Microsoft's own product brand icons (Fluent UI, outlook_48x1.svg and
+                    teams_48x1.svg from https://res.cdn.office.net/files/fabric-cdn-prod_20230815.002/assets/brand-icons/
+                    product/svg/); the collection has no Outlook mark. width and height (256) added to the root svg so
+                    the canvas can size them; nothing else changed. Used under Microsoft's brand guidelines to name the
+                    product only.
+  Gmail uses the existing google-gmail.svg.
+
+Added 26 September 2026 (the founder asked for Google Antigravity, Microsoft Copilot and Hostinger, and for the missing
+logos). Fetched that day; each is the company's own published mark, used only to name the platform:
+  google-antigravity.svg  the SVG Logos collection (antigravity.svg), as above
+  microsoft-copilot.svg   Microsoft's own icon from https://copilot.microsoft.com/static/cmc/favicon.svg; viewBox 0 0 120 120
+                          and width/height 256 added to the root svg so it scales; nothing else changed
+  hostinger.svg           Simple Icons 16 (CC0, https://cdn.jsdelivr.net/npm/simple-icons@16/icons/hostinger.svg) filled
+                          with Hostinger's brand purple #673DE6 (Simple Icons' colour for it); width/height 256 added
+  retell-ai.png           Retell AI's own app icon (apple-touch-icon, 256 px) from https://www.retellai.com; drawn black,
+                          so it is shown white on the navy page
+  holly-ai-nimblr.png     Nimblr's orange Holly mark from https://www.nimblr.ai/hubfs/Orange_Isotype.png, scaled to 256 px
+  modmed.png              ModMed's own site icon (https://www.modmed.com/wp-content/uploads/2024/12/cropped-mm-favicon_512.png),
+                          scaled to 256 px
+  instantly-ai.png        Instantly's own app icon (apple-touch-icon, 256 px) from https://instantly.ai
+  ringcentral.png         RingCentral's own logo (https://www.ringcentral.com/content/dam/rc-www/en_us/images/ringcentral-logo.png),
+                          scaled to 900 px wide; a wordmark (its site icon is only 32 px)
+
+Added 27 September 2026 (the founder asked for Higgsfield and VS Code):
+  vs-code.svg             the SVG Logos collection (visual-studio-code.svg), as above
+  higgsfield.png          Higgsfield's own site icon (https://higgsfield.ai/icon.png, 192 px)
+
+typeform-icon.svg: replaced on 28 September 2026 (founder: "Typeform logo is wrong"). It is Typeform's current mark, the
+pill beside the rounded rectangle, copied from the logo in the header of https://www.typeform.com/ (fetched 28 September
+2026). The viewBox is trimmed to the mark, and it is filled black so the site shows it white (a mono mark). The old
+gilbarbara icon was the earlier Typeform symbol; it was sent to the Recycle Bin.
+
+Added 28 September 2026 (founder: "some buttons still do not have the logos ... add random logos to the empty buttons"). They
+fill the keyboard's blank keys only, and all come from the two suites the site already names (Microsoft 365 and Azure,
+Google Workspace), so the hero shows no tool the agency does not work with:
+  microsoft-excel.svg, microsoft-word.svg, microsoft-powerpoint.svg, microsoft-onedrive.svg, microsoft-sharepoint.svg,
+  microsoft-onenote.svg, microsoft-forms.svg
+                          Microsoft's own product brand icons (Fluent UI, <name>_48x1.svg from
+                          https://res.cdn.office.net/files/fabric-cdn-prod_20230815.002/assets/brand-icons/product/svg/),
+                          width and height (256) added to the root svg, as for Outlook and Teams
+  google-sheets.png, google-docs.png, google-forms.png, google-slides.png, google-chat.png, google-keep.png
+                          Google's own product icons (https://www.gstatic.com/images/branding/product/2x/<name>_2020q4_96dp.png,
+                          192 px)

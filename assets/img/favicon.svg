@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="840" viewBox="0 0 840 840" role="img"><title>Solutionz AI ribbon icon flat</title><defs>
+<linearGradient id="blueFace" x1="0%" y1="100%" x2="100%" y2="0%"><stop stop-color="#043377"/><stop offset="75%" stop-color="#043377"/><stop offset="100%" stop-color="#043377"/></linearGradient>
+<linearGradient id="greenFace" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#42CE33"/><stop offset="100%" stop-color="#42CE33"/></linearGradient>
+<linearGradient id="foldFace" x1="0%" y1="0%" x2="100%" y2="100%"><stop stop-color="#14508A"/><stop offset="52%" stop-color="#043377"/><stop offset="100%" stop-color="#032A64"/></linearGradient>
+</defs><g transform="translate(62.5 176)"><g id="ribbon-symbol">
+<path fill="#043377" d="M0 487 L312 0 L397 143 L176 487 Z"/>
+<path fill="#42CE33" d="M357 305 L460 405 L406 487 L250 487 Z"/>
+<path fill="#043377" d="M357 305 H500 L540 487 Z"/>
+<path fill="#42CE33" d="M312 0 H470 L716 487 H540 Z"/>
+</g></g></svg>
