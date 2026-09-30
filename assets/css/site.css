@@ -1043,7 +1043,7 @@ html.fx-on .tl-end .tl-dot { animation: arrive 1.6s ease-out infinite; }
   background: var(--surface); color: var(--ink-2); font: 500 0.8125rem var(--font-mono); white-space: nowrap; box-shadow: var(--card-shadow); }
 .cloud-chip .tk-com { color: var(--label); }
 .cc-logo { height: 1rem; width: auto; max-width: 2.6rem; }
-.cc-logo.plogo-word { height: 0.9rem; max-width: 3.4rem; }
+.cc-logo.plogo-word { height: 0.9rem; max-width: none; }   /* a wordmark at its own width (29 September 2026: PageSpeed found RingCentral's squeezed) */
 .platform-card { position: relative; z-index: 1; width: 100%; margin-inline: auto; grid-column: 2; grid-row: 1; }
 .platform-card .platform-row { position: relative; display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; padding: 0.55rem 0 0.55rem 1.6em; border: 0; }
 .platform-card .platform-row:last-of-type { border: 0; }

@@ -141,11 +141,11 @@
     } else {
       /* not pinned (29 September 2026, founder: "no motion effects on scroll sections ... 'What we automate'"): the stack
          stays in view (site.css); the service crossing two thirds of the way down the screen lights its panel and its
-         green line, each service slides in as it arrives, and the stack turns a little with the scroll. All scrubbed, so
+         green line, each service slides in as it arrives (fully legible throughout), and the stack turns a little with the scroll. All scrubbed, so
          scrolling back undoes them */
       items.forEach(function (it, i) {
         ScrollTrigger.create({ trigger: it, start: 'top 66%', end: 'bottom 66%', onToggle: function (self) { if (self.isActive) setService(i); } });
-        gsap.fromTo(it, { autoAlpha: 0.25, x: -18 }, { autoAlpha: 1, x: 0, ease: 'none', scrollTrigger: { trigger: it, start: 'top 96%', end: 'top 74%', scrub: F.scrub(0.4) } });
+        gsap.fromTo(it, { x: -24 }, { x: 0, ease: 'none', scrollTrigger: { trigger: it, start: 'top 96%', end: 'top 74%', scrub: F.scrub(0.4) } });   // a slide only: faded text would fail the contrast check (PageSpeed)
       });
       if (rig) {
         gsap.set(rig, { xPercent: -18, yPercent: 14, rotationX: -22 });
