@@ -6,11 +6,11 @@
    2 workflow    the platform plates rise, lines draw into the code card (scrubbed), pulses run down them while the
                  section is on screen, the card writes itself line by line
    3 problems    glass cards: batched entrance (engine.js), columns drift at different speeds, each tilts to the pointer
-   4 services    pinned on desktop: the list steps through six stops (snapped); the matching glass panel slides out
+   4 services    pinned on desktop: the list steps through six stops (snapped); the matching glass panel slides out.
+                 Not pinned (phones, tablets, short screens; 29 September 2026): the stack stays in view while the list
+                 scrolls past, each service slides in and lights its panel and its green line, and the stack turns
    5 how we work the sideways timeline (sections.js, which also leans the glass cards)
-   5 cases       the case study cards (28 September 2026): each opens its case study as a pop-up card (an HTML popover,
-                 so it works without this script); while one is open the page behind holds still and the close button
-                 takes the focus, and the pulse along its tools line runs
+   5 cases       shown in full on the page since 29 September 2026 (pop-up cards from 28 September until then)
    6 platforms   shared with the About page (sections.js): the rows draw in, the names drift at three depths
    Scrubs follow ?exact=1 (engine.js). Reduced motion, ?motion=off or no GSAP: everything stays as authored in CSS. */
 (function () {
@@ -85,26 +85,13 @@
     navigator.clipboard.writeText(text).then(function () { copy.classList.add('is-done'); setTimeout(function () { copy.classList.remove('is-done'); }, 1600); });
   });
 
-  /* ---------- the case study pop-up cards ---------- */
-  q('[data-case-pop]').forEach(function (pop) {
-    pop.addEventListener('toggle', function (e) {
-      var open = e.newState === 'open';
-      document.documentElement.classList.toggle('pop-open', open);
-      if (F.lenis) { if (open) F.lenis.stop(); else F.lenis.start(); }
-      if (open) { var b = pop.querySelector('.case-pop-close'); if (b) b.focus({ preventScroll: true }); }
-    });
-  });
-  q('[data-chain]').forEach(function (chain) {
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { chain.classList.toggle('is-live', es[0].isIntersecting); }, { threshold: 0.3 }).observe(chain);
-  });
-
   if (!F.on) { F.done(); return; }
 
   /* pulses run only while the workflow section is on screen */
   var connect = document.querySelector('[data-connect]');
   if (connect) new IntersectionObserver(function (es) { connect.classList.toggle('is-live', es[0].isIntersecting); }, { threshold: 0.15 }).observe(connect);
 
-  F.mm.add({ desktop: '(min-width: 1024px) and (min-height: 700px)', compact: '(max-width: 1023px), (max-height: 699px)', wide: '(min-width: 900px)', reduceMotion: '(prefers-reduced-motion: reduce)' }, function (ctx) {
+  F.mm.add({ desktop: '(min-width: 1024px) and (min-height: 700px)', compact: '(max-width: 1023px), (max-height: 699px)', wide: '(min-width: 900px)', small: '(max-width: 767px)', reduceMotion: '(prefers-reduced-motion: reduce)' }, function (ctx) {
     var c = ctx.conditions;
     if (c.reduceMotion) return;
 
@@ -116,8 +103,9 @@
       var intro = gsap.timeline({ delay: 0.05, defaults: { duration: 0.8, ease: 'power3.out' } });
       intro.fromTo('[data-hero="eyebrow"]', { autoAlpha: 0, y: 12 }, { autoAlpha: 1, y: 0, duration: 0.4 }, 0);
       if (type) intro.add(F.typeTween(type, 1.1), 0.1);
-      intro.fromTo('[data-hero="lead"]', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0 }, 0.45)
-        .fromTo('[data-hero="btns"]', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0 }, 0.6)
+      /* the paragraph is on screen from the first paint (29 September 2026, so the page's main text never waits); the
+         buttons, the note and the strip rise in */
+      intro.fromTo('[data-hero="btns"]', { autoAlpha: 0, y: 24 }, { autoAlpha: 1, y: 0 }, 0.6)
         .fromTo('[data-hero="note"]', { autoAlpha: 0, y: 16 }, { autoAlpha: 1, y: 0, duration: 0.5 }, 0.75)
         .fromTo('[data-hero="strip"]', { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.9 }, 0.8);
     });
@@ -128,7 +116,9 @@
     /* ---- 2. one workflow, scrubbed: plates, lines, card, lines of code ---- */
     var wf = gsap.timeline({ scrollTrigger: { trigger: '.connect-stage', start: 'top 85%', end: 'bottom 70%', scrub: F.scrub(0.6) } });
     wf.fromTo('.mini-key', { y: 24, autoAlpha: 0 }, { y: 0, autoAlpha: 1, stagger: 0.04, duration: 0.3 }, 0);
-    if (window.DrawSVGPlugin) wf.fromTo('.cl-live', { drawSVG: '0%' }, { drawSVG: '100%', stagger: 0.03, duration: 0.55, ease: 'none' }, 0.12);
+    /* the lines on screen: the row of eight, or on phones the four under the two rows of plates (29 September 2026) */
+    var lines = q('.cl-live').filter(function (l) { return l.ownerSVGElement && l.ownerSVGElement.getClientRects().length; });
+    if (window.DrawSVGPlugin && lines.length) wf.fromTo(lines, { drawSVG: '0%' }, { drawSVG: '100%', stagger: 0.03, duration: 0.55, ease: 'none' }, 0.12);
     wf.fromTo('[data-code]', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.35 }, 0.4)
       .fromTo('[data-cl]', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', stagger: 0.1, duration: 0.22, ease: 'none' }, 0.62);
 
@@ -149,7 +139,18 @@
       if (rig) gsap.set(rig, { xPercent: -18, yPercent: 14, rotationX: -22 });
       if (rig) gsap.fromTo(rig, { rotationY: -50 }, { rotationY: -38, ease: 'none', scrollTrigger: { trigger: services, start: 'top top', end: '+=' + (items.length * 55) + '%', scrub: true } });
     } else {
-      items.forEach(function (it, i) { ScrollTrigger.create({ trigger: it, start: 'top 70%', end: 'bottom 40%', onToggle: function (self) { if (self.isActive) setService(i); } }); });
+      /* not pinned (29 September 2026, founder: "no motion effects on scroll sections ... 'What we automate'"): the stack
+         stays in view (site.css); the service crossing two thirds of the way down the screen lights its panel and its
+         green line, each service slides in as it arrives, and the stack turns a little with the scroll. All scrubbed, so
+         scrolling back undoes them */
+      items.forEach(function (it, i) {
+        ScrollTrigger.create({ trigger: it, start: 'top 66%', end: 'bottom 66%', onToggle: function (self) { if (self.isActive) setService(i); } });
+        gsap.fromTo(it, { autoAlpha: 0.25, x: -18 }, { autoAlpha: 1, x: 0, ease: 'none', scrollTrigger: { trigger: it, start: 'top 96%', end: 'top 74%', scrub: F.scrub(0.4) } });
+      });
+      if (rig) {
+        gsap.set(rig, { xPercent: -18, yPercent: 14, rotationX: -22 });
+        gsap.fromTo(rig, { rotationY: -54 }, { rotationY: -34, ease: 'none', scrollTrigger: { trigger: '.service-list', start: 'top bottom', end: 'bottom top', scrub: true } });
+      }
     }
 
     /* ---- 5. how we work and 6. platforms: shared with the other pages (sections.js) ---- */

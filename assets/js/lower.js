@@ -20,7 +20,10 @@
 
   /* split headings into words (keeps inline children intact) */
   document.querySelectorAll('[data-split]').forEach(function (h) {
-    h.setAttribute('aria-label', h.textContent.replace(/\s+/g, ' ').trim());
+    /* only a heading takes its words as its label: a line inside a heading (the homepage headline, which has its own
+       aria-label) keeps its words as plain text, since a span may not carry aria-label (Lighthouse, 29 September 2026) */
+    var named = /^H[1-6]$/.test(h.tagName);
+    if (named) h.setAttribute('aria-label', h.textContent.replace(/\s+/g, ' ').trim());
     var i = 0;
     (function wrap(node) {
       Array.prototype.slice.call(node.childNodes).forEach(function (n) {
@@ -29,7 +32,7 @@
           n.textContent.split(/(\s+)/).forEach(function (part) {
             if (!part) return;
             if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
-            var s = document.createElement('span'); s.className = 'w'; s.setAttribute('aria-hidden', 'true'); s.style.setProperty('--i', i++); s.textContent = part; frag.appendChild(s);
+            var s = document.createElement('span'); s.className = 'w'; if (named) s.setAttribute('aria-hidden', 'true'); s.style.setProperty('--i', i++); s.textContent = part; frag.appendChild(s);
           });
           n.replaceWith(frag);
         } else if (n.nodeType === 1) wrap(n);
@@ -42,7 +45,9 @@
     if (!e.isIntersecting) return; e.target.classList.add('in'); io.unobserve(e.target);
   }); }, { threshold: 0.18 });
   document.querySelectorAll('.reveal-up, [data-split]').forEach(function (el) { if (!el.closest('.hero')) io.observe(el); });
-  afterIntro(function () { document.querySelectorAll('.hero [data-split]').forEach(function (el) { el.classList.add('in'); }); });   // behind the opening screen until it lifts
+  /* the headline's words rise at once (29 September 2026): behind the opening screen when it plays, so the headline is
+     already in place as it lifts */
+  document.querySelectorAll('.hero [data-split]').forEach(function (el) { el.classList.add('in'); });
 
   /* pointer interactions (desktop only) */
   if (fine && fxOn) {

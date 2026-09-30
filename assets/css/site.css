@@ -426,7 +426,17 @@ h1, h2, h3 { color: var(--ink); }
 .menu-toggle .bars, .theme-toggle { flex: none; }
 .site-header, .mobile-nav { color-scheme: light; }
 .logo-svg .lg-f, .logo-svg .lg-l, .logo-svg .lg-d { transform-box: fill-box; }
-.site-header { background: rgba(255, 255, 255, 0.94); border-bottom: 1px solid #DCE1E7; -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+/* the frosted bar is a layer behind the header's contents (29 September 2026, founder: "MENU on the top right corner does
+   not open properly"): with the blur on the header itself, the header became the frame of the fixed phone menu, which then
+   opened as a strip the height of the header */
+.site-header { background: transparent; border-bottom: 1px solid #DCE1E7; }
+.site-header::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: rgba(255, 255, 255, 0.94);
+  -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+/* the phone menu drops in (29 September 2026) */
+@keyframes nav-in { from { opacity: 0; transform: translateY(-10px); } }
+html.fx-on .mobile-nav:not([hidden]) { animation: nav-in 0.28s cubic-bezier(0.2, 0.7, 0.2, 1); }
+/* its button keeps the button's own shape (the menu's link rule had taken its padding and centring) */
+.mobile-nav .btn { display: flex; padding: 0.95rem 1rem; border: 2px solid var(--accent); color: var(--accent-ink); white-space: normal; text-align: center; }
 .site-header.is-scrolled { box-shadow: 0 6px 30px rgba(4, 18, 48, 0.16); }
 .lg-ink { fill: #043377; }
 .lg-green { fill: #42CE33; }
@@ -440,11 +450,32 @@ h1, h2, h3 { color: var(--ink); }
 .nav-services { padding-right: 0.15rem; }
 .menu-chev { padding-left: 0.2rem; padding-right: 0.6rem; }
 
+/* ---------- the type at 90% on desktop (29 September 2026; founder: "Writing is still bit bigger", then "90%, like your
+   zoom"): the root size is 90%, so every font and space sized in rem is 90%, as in the founder's 90% browser zoom. Sizes in
+   px stay: the header's height and logo, the keys, borders. The header keeps its approved text size, so its rem sizes are
+   given back here; the hero, at 90% since 28 September 2026, keeps its look (site.css). Phones and tablets: pages.css. */
+@media (min-width: 1024px) {
+  html { font-size: 90%; }
+  .site-header { font-size: calc(var(--fs-body) / 0.9); }
+  .site-header .header-inner { gap: calc(var(--s-5) / 0.9); }
+  .site-header .nav-list { gap: calc(var(--s-2) / 0.9); }
+  .site-header .nav-link { padding: calc(0.5rem / 0.9) calc(0.75rem / 0.9); }
+  .site-header .nav-services { padding-right: calc(0.15rem / 0.9); }
+  .site-header .menu-chev { padding-left: calc(0.2rem / 0.9); padding-right: calc(0.6rem / 0.9); }
+  .site-header .btn-sm { padding: calc(0.55rem / 0.9) calc(1rem / 0.9); font-size: calc(0.9375rem / 0.9); }
+  .site-header .menu { min-width: calc(22rem / 0.9); padding: calc(var(--s-2) / 0.9); }
+  .site-header .menu a { padding: calc(0.6rem / 0.9) calc(0.75rem / 0.9); }
+  .site-header .menu a span { font-size: calc(var(--fs-small) / 0.9); }
+}
+
 /* ---------- buttons ---------- */
 .btn { position: relative; transition: transform 0.25s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
 .btn-primary { box-shadow: 0 0 22px var(--btn-glow); }
 .btn-primary:hover { box-shadow: 0 0 18px rgba(66, 206, 51, 0.7), 0 0 50px rgba(66, 206, 51, 0.3); }
 .btn .arrow { display: inline-block; transition: transform 0.25s ease; }
+/* small phones (29 September 2026): at 360 px the full call to action ran wider than the screen, so the browser laid the
+   page out at 370 px and shrank it; buttons wrap there instead */
+@media (max-width: 599px) { .btn { max-width: 100%; white-space: normal; text-align: center; text-wrap: pretty; } }
 .btn:hover .arrow { transform: translateX(3px); }
 a.more { color: var(--ink); text-decoration: underline; text-decoration-color: var(--n-green); text-decoration-thickness: 2px; text-underline-offset: 0.22em; }
 
@@ -601,7 +632,7 @@ html.pages-overlap .page-sink { transform-origin: 50% 0; will-change: transform,
   .sz-footer-grid { grid-template-columns: 1fr 1fr; }
   .sz-footer-grid .footer-brand { grid-column: 1 / -1; }
   .sz-footer-panel { clip-path: polygon(2rem 0, 100% 0, 100% 100%, 0 100%, 0 2rem); }
-  .portrait { max-width: 320px; margin-inline: 0; }
+  .portrait { max-width: 320px; }   /* centred here too (founder, 29 September 2026: "Founder's picture is not in the center") */
 }
 @media (max-width: 520px) { .sz-footer-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .caret { animation: none; } .cursor-light { display: none; } }
@@ -649,6 +680,8 @@ html.fx-off .to-top path { animation: none; }
 html.fx-off .to-top .tt-2 { opacity: 0.5; }
 @media (prefers-reduced-motion: reduce) { .to-top path { animation: none; } .to-top .tt-2 { opacity: 0.5; } }
 @media (max-width: 599px) { .to-top svg { width: 1.45rem; height: 1.4rem; } }
+/* phones (29 September 2026): at the bottom centre the arrows sat on the text, so here they keep to the bottom-right corner */
+@media (max-width: 767px) { .to-top { left: auto; right: 0.5rem; margin-inline: 0; } }
 
 /* official-colour platform marks: marks drawn in black are shown white on the navy page (Zapier has its own dark file) */
 img.plogo-mono { filter: invert(1); }
@@ -743,6 +776,7 @@ html.intro-pre body::before { content: ""; position: fixed; inset: 0; z-index: 9
 .rot { display: inline-grid; vertical-align: baseline; }
 .rot > * { grid-area: 1 / 1; }
 .rot-size { visibility: hidden; }
+.rot-size::before { content: attr(data-w); }   /* drawn from the attribute (29 September 2026): search engines read the headline once, "...your business." */
 .rot-word { justify-self: start; white-space: nowrap; color: light-dark(#043377, #42CE33);
   text-shadow: 0 0 28px light-dark(transparent, rgba(66, 206, 51, 0.55));
   background: linear-gradient(transparent 70%, light-dark(rgba(66, 206, 51, 0.5), transparent) 70%, light-dark(rgba(66, 206, 51, 0.5), transparent) 92%, transparent 92%) no-repeat; }
@@ -752,7 +786,9 @@ html.intro-pre body::before { content: ""; position: fixed; inset: 0; z-index: 9
 .hero .lead { max-width: 62ch; margin-bottom: var(--s-6); font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem); }
 .hero .btn-row { gap: var(--s-3); }
 .hero-note { margin-top: var(--s-4); font: 500 0.8125rem/1.5 var(--font-mono); color: var(--ink-3); }
-html.fx-on [data-hero] { opacity: 0; }
+/* the parts that rise in after the opening screen; the paragraph is on screen from the first paint (29 September 2026), so
+   the page's main text never waits for the scripts */
+html.fx-on [data-hero]:not([data-hero="lead"]) { opacity: 0; }
 
 .hero-strip { position: relative; display: flex; align-items: center; gap: var(--s-6); padding: 1rem var(--gutter); border-top: 1px solid var(--line); background: color-mix(in srgb, var(--hero-ground) 72%, transparent); }
 .strip-label { flex: none; margin: 0; font: 600 0.8125rem var(--font-mono); color: var(--ink-2); white-space: nowrap; }
@@ -774,9 +810,13 @@ html.fx-off .strip-row { flex-wrap: wrap; row-gap: 0.7rem; }
    The strip is see-through too (third screenshot: the bottom row of keys was still hidden), so the keys on the bottom row
    show through it; its label sits on its own
    dark tab and the names carry a soft shadow, so both stay readable over the keys */
+/* Since 29 September 2026 the whole desktop site is at 90% (fresh.css, the root size), so the hero no longer needs its own
+   zoom: its rem sizes are 90% already, and the parts that grow with the screen width grow 90% as fast, so it reads as before */
 @media (min-width: 1024px) {
-  .hero-copy > *, .hero-strip { zoom: 0.9; }
-  .hero-copy { padding-bottom: calc(clamp(1.75rem, 1rem + 2vw, 3rem) * 0.9); }
+  .hero h1 { font-size: clamp(2.35rem, 1.1rem + 3.51vw, 4.75rem); }
+  .hero .lead { font-size: clamp(1.0625rem, 1rem + 0.315vw, 1.25rem); }
+  .hero .code-eyebrow { font-size: clamp(0.875rem, 0.8rem + 0.27vw, 1rem); }
+  .hero-copy { padding-bottom: clamp(1.75rem, 1rem + 1.8vw, 3rem); }
   .hero-strip { background: linear-gradient(90deg, color-mix(in srgb, var(--hero-ground) 30%, transparent), color-mix(in srgb, var(--hero-ground) 18%, transparent)); }
   .strip-label { padding: 0.35rem 0.65rem; border-radius: 8px; background: color-mix(in srgb, var(--hero-ground) 86%, transparent); }
   .strip-row li { text-shadow: 0 1px 10px rgba(5, 12, 32, 0.95), 0 0 3px rgba(5, 12, 32, 1), 0 0 18px rgba(5, 12, 32, 0.8); }
@@ -809,6 +849,7 @@ html.fx-off .rain-bg { display: none; }
 .mk-logo { width: 46%; height: 46%; object-fit: contain; }
 .mini-key:hover { transform: translateY(-4px); border-color: var(--n-green); box-shadow: 0 0 0 1px var(--n-green), 0 0 30px rgba(66, 206, 51, 0.45); }
 .connect-lines { display: block; width: 100%; height: clamp(90px, 16vw, 170px); margin-top: 0.5rem; overflow: visible; }
+.connect-lines-sm { display: none; }
 .cl-base { fill: none; stroke: var(--line-strong); stroke-width: 1.4; }
 .cl-live { fill: none; stroke: color-mix(in srgb, var(--n-green) 55%, transparent); stroke-width: 1.8; stroke-linecap: round; }
 /* pulses running down each line into the card, like meetstream's (CSS only, so they never block scrolling) */
@@ -886,6 +927,11 @@ html.fx-on .p-icon { animation: bob 4.5s ease-in-out infinite; }
 .services.is-pinned .service-item { opacity: 0.5; transition: opacity 0.4s ease; }
 .services.is-pinned .service-item.is-active { opacity: 1; }
 .services.is-pinned .service-item.is-active::before { transform: scaleX(1); }
+/* not pinned (phones, tablets, short screens; 29 September 2026): the stack stays in view while the list scrolls past, and
+   the service crossing two thirds of the way down the screen draws its green line and lifts its panel (console.js) */
+html.fx-on .services:not(.is-pinned) .services-visual { position: sticky; top: var(--header-h); z-index: 2; }
+html.fx-on .services:not(.is-pinned) .service-item.is-active::before { transform: scaleX(1); }
+@media (min-width: 1024px) { html.fx-on .services:not(.is-pinned) .services-visual { align-self: start; top: calc(var(--header-h) + 2rem); } }
 .services.is-pinned .service-more { grid-template-rows: 0fr; transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.7, 0.2, 1); }
 .services.is-pinned .service-item.is-active .service-more { grid-template-rows: 1fr; }
 /* the stack: thick glass panels standing in a row that recedes up to the right (after meetstream's feature stack);
@@ -1005,6 +1051,11 @@ html.fx-on .tl-end .tl-dot { animation: arrive 1.6s ease-out infinite; }
 .platform-row .pr-key, .platform-row .pr-end { margin: 0; }
 .platform-row .chips { display: contents; }
 .platform-row .chip { padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line); color: var(--ink); font: 500 0.8125rem var(--font-mono); }
+/* a service page lights the platforms that service uses (29 September 2026, founder: "Full list, lit"): navy on green */
+.platform-row .chip.is-lit { background: var(--n-green); border-color: var(--n-green); color: var(--n-navy); font-weight: 700; box-shadow: 0 0 16px rgba(66, 206, 51, 0.45); }
+.pc-legend { display: inline-flex; align-items: center; gap: 0.45rem; margin-left: auto; font: 500 0.75rem var(--font-mono); color: var(--ink-2); }
+@media (max-width: 479px) { .platform-card .code-bar { flex-wrap: wrap; row-gap: 0.35rem; } .pc-legend { margin-left: 0; flex-basis: 100%; } }
+.pc-legend i { width: 0.7rem; height: 0.7rem; border-radius: 3px; background: var(--n-green); box-shadow: 0 0 8px rgba(66, 206, 51, 0.6); }
 
 /* ---------- smaller screens ---------- */
 @media (max-width: 1279px) {
@@ -1014,8 +1065,14 @@ html.fx-on .tl-end .tl-dot { animation: arrive 1.6s ease-out infinite; }
 }
 @media (max-width: 1023px) {
   .problem-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .services-grid { grid-template-columns: minmax(0, 1fr); }
-  .services-visual { order: -1; }
+  /* the heading, the panel stack, then the list (29 September 2026, founder: "no motion effects on scroll sections ...
+     'What we automate'"): one column, so the stack can stay under the header while the list scrolls up past it */
+  .services-grid { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+  .services-copy { display: contents; }
+  .services-visual { order: 1; }
+  .service-list { order: 2; }
+  html.fx-on .services:not(.is-pinned) .services-visual { margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter);
+    background: linear-gradient(180deg, var(--ground) 80%, color-mix(in srgb, var(--ground) 0%, transparent)); }
   .stack { height: 250px; }
   .stack-rig { width: 90px; }
 }
@@ -1025,9 +1082,12 @@ html.fx-on .tl-end .tl-dot { animation: arrive 1.6s ease-out infinite; }
   .strip-window { width: 100%; }
   .connect-keys { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 0.6rem; }
   .connect-keys .mini-key { max-width: 64px; }
+  .stack { height: 200px; }
+  .stack-rig { width: 76px; }
   .connect-lines { display: none; }
-  .flow-card { margin-top: var(--s-5); }
-  .flow-card::before { display: none; }
+  /* phones (29 September 2026, founder: "no motion effects on scroll sections ... 'One automated workflow'"): four lines,
+     one from each column of plates, drawn in with the scroll and carrying the pulses into the card */
+  .connect-lines-sm { display: block; width: calc(100% - 2rem); height: clamp(64px, 20vw, 110px); margin: 0.5rem 1rem 0; overflow: visible; }
 }
 @media (max-width: 599px) {
   .problem-grid { grid-template-columns: minmax(0, 1fr); }
@@ -1161,7 +1221,8 @@ html.fx-on .flow.is-live .flow-node.is-lit + .flow-node::after { opacity: 1; ani
 .flow-node.is-lit .flow-n { color: var(--n-green); }
 
 /* ---------- service page: platforms and the compliance note ---------- */
-.svc-logos { display: flex; flex-wrap: wrap; gap: 0.7rem 0.8rem; margin: 0 0 var(--s-7); padding: 0; list-style: none; }
+/* every platform as the code object, the service's own lit (29 September 2026) */
+.svc-platforms .platform-card { max-width: 880px; margin: 0 0 var(--s-7); }
 .compliance { display: flex; align-items: flex-start; gap: var(--s-4); max-width: 60rem; padding: 1.4rem 1.6rem; border-radius: 18px;
   background: linear-gradient(155deg, var(--glass), var(--glass-2)); border: 1px solid rgba(66, 206, 51, 0.4); box-shadow: inset 0 1px 0 var(--glass-hi), 0 0 34px rgba(66, 206, 51, 0.12); }
 .compliance-icon { display: grid; place-items: center; flex: none; width: 3rem; height: 3rem; border-radius: 14px; background: rgba(66, 206, 51, 0.15); border: 1px solid rgba(66, 206, 51, 0.5); }
@@ -1305,31 +1366,17 @@ html.fx-on .qr-frame::before { animation: qr-breathe 2.8s ease-in-out infinite; 
 .qr-save svg { width: 1.1rem; height: 1.1rem; flex: none; fill: none; stroke: var(--n-green); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .qr-save:hover, .qr-save:focus-visible { border-color: var(--n-green); background: rgba(66, 206, 51, 0.1); color: #fff; }
 
-/* ---------- Case studies: the homepage cards and the pop-up card each opens (28 September 2026) ---------- */
-.case-head { max-width: 60rem; margin-bottom: clamp(1.5rem, 1rem + 2vw, 2.6rem); padding-right: 3.5rem; }
-.case-head .code-label { margin-bottom: var(--s-3); }
-.case-head h2 { margin: 0 0 var(--s-3); font-size: clamp(2rem, 1.1rem + 2.6vw, 3.4rem); line-height: 1.02; letter-spacing: -0.035em; }
-.case-where { margin: 0 0 var(--s-2); font: 600 0.9375rem/1.4 var(--font-mono); color: var(--ink-2); }
+/* ---------- Case studies on the homepage (29 September 2026; pop-up cards from 28 September until then): each case in
+   full on the page, short: the client, the tags and the result beside the client's quote ---------- */
+.case-list { display: grid; gap: clamp(2rem, 1.2rem + 3vw, 4rem); }
+.case { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: clamp(1.5rem, 4vw, 4.5rem); align-items: start;
+  padding-top: clamp(1.5rem, 1rem + 2vw, 2.5rem); border-top: 1px solid var(--line); scroll-margin-top: calc(var(--header-h) + 1.5rem); }
+.case-summary { display: grid; align-content: start; gap: var(--s-3); padding-top: clamp(0rem, 2vw, 1.75rem); }
+.case-n { margin: 0 0 var(--s-2); font: 800 clamp(2.2rem, 1.8rem + 1.2vw, 3rem)/1 var(--font-mono); color: transparent; -webkit-text-stroke: 1.5px var(--n-green); }
+.case h3 { margin: 0; font-size: clamp(1.7rem, 1.2rem + 1.6vw, 2.6rem); line-height: 1.05; letter-spacing: -0.03em; }
+.case-where { margin: 0; font: 600 0.9375rem/1.4 var(--font-mono); color: var(--ink-2); }
 .case-eyebrow { margin: 0; font: 700 0.8125rem/1.5 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--label); }
-.case-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(2rem, 4vw, 4.5rem); align-items: start; }
-.case-story { display: grid; gap: clamp(1.4rem, 1rem + 1.2vw, 2.2rem); }
-.case-label { margin: 0 0 var(--s-3); font: 700 0.8125rem/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); }
-.case-block p, .case-privacy p { margin: 0; max-width: 60ch; font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.2rem); color: var(--ink-2); }
-/* the tools: the homepage's metal keys on a line; a pulse runs along it while it is on screen (console.js) */
-.tool-chain { --key: 72px; --slot: 7rem; --gap: clamp(1rem, 3vw, 2.5rem); --run: calc((var(--slot) + var(--gap)) * (var(--n, 3) - 1));
-  position: relative; display: flex; gap: var(--gap); margin: 0; padding: 0; list-style: none; }
-.tool-chain::before { content: ""; position: absolute; left: calc(var(--slot) / 2); width: var(--run); top: calc(var(--key) / 2 - 1px); height: 2px;
-  background: linear-gradient(90deg, rgba(66, 206, 51, 0.55), rgba(125, 182, 255, 0.35)); }
-.tool-chain::after { content: ""; position: absolute; top: calc(var(--key) / 2 - 2px); left: calc(var(--slot) / 2); width: 56px; height: 4px; border-radius: 2px; opacity: 0;
-  background: linear-gradient(90deg, transparent, #42CE33, transparent); filter: drop-shadow(0 0 6px #42CE33); }
-html.fx-on .tool-chain.is-live::after { animation: chain-pulse 2.8s linear infinite; }
-@keyframes chain-pulse { 0% { transform: translateX(0); opacity: 0; } 12%, 88% { opacity: 1; } 100% { transform: translateX(calc(var(--run) - 56px)); opacity: 0; } }
-.tool { position: relative; z-index: 1; display: grid; justify-items: center; align-content: start; gap: 0.6rem; width: var(--slot); text-align: center; }
-.tool .mini-key { width: var(--key); max-width: none; }
-.tool .mk-logo.plogo-word { width: 84%; height: 34%; }   /* a wordmark (RingCentral) needs the key's width, not a square */
-.tool-name { font: 600 0.8125rem/1.3 var(--font-mono); color: var(--ink); }
-.case-privacy { display: flex; gap: 1rem; align-items: flex-start; padding: clamp(1.1rem, 0.9rem + 0.8vw, 1.5rem); border-radius: 18px; border: 1px solid rgba(66, 206, 51, 0.4); background: rgba(66, 206, 51, 0.07); }
-.case-privacy .case-label { margin-bottom: var(--s-2); }
+.case-result { margin: var(--s-2) 0 0; max-width: 46ch; font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem); color: var(--ink-2); }
 /* the quote on a glass card, a large green opening mark, the speaker and the client's own site under it */
 .case-quote { position: relative; margin: 0; padding: clamp(1.6rem, 1.2rem + 1.6vw, 2.6rem); border-radius: 24px; background: linear-gradient(155deg, var(--glass), var(--glass-2));
   border: 1px solid rgba(66, 206, 51, 0.35); box-shadow: inset 0 1px 0 var(--glass-hi), 0 0 44px rgba(66, 206, 51, 0.1); }
@@ -1341,46 +1388,6 @@ html.fx-on .tool-chain.is-live::after { animation: chain-pulse 2.8s linear infin
 .case-proof { justify-self: start; font: 700 0.875rem/1.3 var(--font-mono); color: var(--n-green); text-decoration: underline; text-underline-offset: 0.22em; }
 .case-proof .arrow { display: inline-block; transition: transform 0.25s ease; }
 .case-proof:hover .arrow, .case-proof:focus-visible .arrow { transform: translate(2px, -2px); }
-/* the homepage cards: a card per client; its link opens the case study (the link covers the whole card) */
-.case-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2vw, 1.75rem); }
-.case-card { position: relative; display: grid; align-content: start; gap: var(--s-3); padding: clamp(1.4rem, 1rem + 1.4vw, 2.2rem); border-radius: 22px;
-  background: linear-gradient(155deg, var(--glass), var(--glass-2)); border: 1px solid var(--glass-line); box-shadow: inset 0 1px 0 var(--glass-hi); color: var(--ink); text-decoration: none;
-  transition: transform 0.3s ease, border-color 0.3s ease; }
-.case-card:hover, .case-card:focus-within { transform: translateY(-4px); border-color: rgba(66, 206, 51, 0.6); }
-.case-card:has(.case-more:focus-visible) { outline: 2px solid var(--n-green); outline-offset: 3px; }
-.case-card-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: var(--s-2); }
-.case-card-n { font: 800 clamp(2.2rem, 1.8rem + 1.2vw, 3rem)/1 var(--font-mono); color: transparent; -webkit-text-stroke: 1.5px var(--n-green); transition: color 0.3s ease, text-shadow 0.3s ease; }
-.case-card:hover .case-card-n { color: var(--n-green); text-shadow: 0 0 26px rgba(66, 206, 51, 0.55); }
-.case-card-tools { display: flex; align-items: center; gap: 0.7rem; }
-.cc-tool { display: block; height: 1.6rem; width: auto; max-width: 3rem; object-fit: contain; }
-.cc-tool.plogo-word { height: 1.25rem; max-width: 5.6rem; }
-.case-card h3 { margin: 0; font-size: clamp(1.5rem, 1.2rem + 1vw, 2.1rem); line-height: 1.1; letter-spacing: -0.02em; }
-.case-teaser { margin: 0; color: var(--ink-2); }
-.case-more { justify-self: start; margin-top: var(--s-2); padding: 0; border: 0; background: none; color: var(--ink); font: inherit; font-weight: 600; cursor: pointer;
-  text-decoration: underline; text-decoration-color: var(--n-green); text-decoration-thickness: 2px; text-underline-offset: 0.22em; }
-.case-more::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
-.case-more:focus-visible { outline: none; }
-.case-more .arrow { display: inline-block; color: var(--n-green); transition: transform 0.25s ease; }
-.case-card:hover .case-more .arrow { transform: translateX(4px); }
-/* the pop-up card (an HTML popover): centred over a dimmed, blurred page, its own content scrolling inside; it rises in
-   as it opens. Escape, the close button or a click outside closes it */
-.case-pop { width: min(1120px, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); margin: auto; padding: 0; border: 0; background: transparent; color: var(--ink); overflow: visible;
-  opacity: 0; transform: translateY(18px) scale(0.98); transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), overlay 0.35s allow-discrete, display 0.35s allow-discrete; }
-.case-pop:popover-open { opacity: 1; transform: none; }
-@starting-style { .case-pop:popover-open { opacity: 0; transform: translateY(18px) scale(0.98); } }
-.case-pop::backdrop { background: rgba(3, 10, 28, 0.74); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); opacity: 0;
-  transition: opacity 0.3s ease, overlay 0.3s allow-discrete, display 0.3s allow-discrete; }
-.case-pop:popover-open::backdrop { opacity: 1; }
-@starting-style { .case-pop:popover-open::backdrop { opacity: 0; } }
-html.fx-off .case-pop, html.fx-off .case-pop::backdrop { transition: none; }
-html.pop-open { overflow: hidden; }
-.case-pop-card { max-height: calc(100dvh - 2rem); overflow: auto; overscroll-behavior: contain; padding: clamp(1.4rem, 1rem + 2.2vw, 3rem); border-radius: 26px;
-  background: linear-gradient(160deg, #10224A, #081634 70%); border: 1px solid rgba(66, 206, 51, 0.4); box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55), 0 0 60px rgba(66, 206, 51, 0.12); }
-.case-pop-close { position: absolute; top: clamp(0.9rem, 0.6rem + 1vw, 1.4rem); right: clamp(0.9rem, 0.6rem + 1vw, 1.4rem); z-index: 2; display: grid; place-items: center; width: 2.75rem; height: 2.75rem;
-  padding: 0; border-radius: 50%; border: 1.5px solid rgba(66, 206, 51, 0.7); background: rgba(8, 22, 52, 0.85); color: var(--n-green); cursor: pointer; transition: background-color 0.25s ease, color 0.25s ease; }
-.case-pop-close svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
-.case-pop-close:hover, .case-pop-close:focus-visible { background: var(--n-green); color: var(--n-navy); }
-.case-pop-close:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
 /* ---------- Privacy policy ---------- */
 .policy-date { margin: 0; font: 600 0.875rem/1.5 var(--font-mono); letter-spacing: 0.02em; color: var(--ink-2); }
@@ -1421,7 +1428,7 @@ html.fx-on .nf-top, html.fx-on .nf-d { transition: background 0.35s ease, color 
 
 /* ---------- smaller screens ---------- */
 @media (max-width: 1023px) {
-  .page-hero-grid, .service-hero-grid, .groups-grid, .practice-grid, .seo-grid, .contact-hero-grid, .contact-grid, .nf-grid, .case-grid { grid-template-columns: minmax(0, 1fr); }
+  .page-hero-grid, .service-hero-grid, .groups-grid, .practice-grid, .seo-grid, .contact-hero-grid, .contact-grid, .nf-grid, .case { grid-template-columns: minmax(0, 1fr); }
   .nf-stage { order: -1; min-height: 0; padding-block: 2.5rem 1rem; }
   .facts-card { max-width: none; justify-self: stretch; }
   .signal { --s: min(280px, 68vw); }
@@ -1436,8 +1443,7 @@ html.fx-on .nf-top, html.fx-on .nf-d { transition: background 0.35s ease, color 
   .flow-n { left: 50%; top: calc(100% + 0.5rem); margin: 0 0 0 -0.6em; }
 }
 @media (max-width: 767px) {
-  .offer-grid, .related-grid, .field-grid, .nf-links, .case-cards { grid-template-columns: minmax(0, 1fr); }
-  .tool-chain { --key: 60px; --slot: 5.6rem; }
+  .offer-grid, .related-grid, .field-grid, .nf-links { grid-template-columns: minmax(0, 1fr); }
   .rule { grid-template-columns: minmax(0, 1fr); }
   .rule-d { grid-column: 1; }
   .svc-scene { --solo: 128px; --ring: 270px; height: 320px; }
@@ -1445,8 +1451,50 @@ html.fx-on .nf-top, html.fx-on .nf-d { transition: background 0.35s ease, color 
   .flow { --gap: 1rem; }
   .flow-icon { width: 3.6rem; height: 3.6rem; border-radius: 18px; }
 }
+/* small phones (29 September 2026): the five flow icons on Business Automation and the logo ring fit a 320 px screen */
+@media (max-width: 419px) {
+  .flow { --gap: 0.6rem; }
+  .flow-icon { width: 3rem; height: 3rem; border-radius: 15px; }
+  .svc-scene { --solo: 112px; --ring: 232px; height: 290px; }
+}
 /* the QR card stacks when its column is narrow (phones, and laptops around 1024 px wide) */
 @container (max-width: 399px) {
   .qr-card { grid-template-columns: minmax(0, 1fr); justify-items: start; }
 }
 @media (prefers-reduced-motion: reduce) { .solo-panel.panel.is-active, .orbit, .orbit-logo { animation: none !important; } }
+
+/* ---------- type on phones and tablets (29 September 2026; founder: "Writing is still bit bigger", then the 90% plan): body
+   text 16 px (was 17), the big headings about 15% smaller, card headings and lead lines a little smaller. Each size is the
+   desktop formula scaled, so it still grows between a small phone and a tablet. Form fields stay at 16 px (iPhones zoom
+   into smaller ones). Desktop: fresh.css (the root at 90%). ---------- */
+@media (max-width: 1023px) {
+  :root { --fs-body: 1rem; --fs-lead: calc(0.94 * clamp(1.125rem, 1rem + 0.5vw, 1.3125rem)); }
+  .hero h1 { font-size: calc(0.85 * clamp(2.35rem, 1.1rem + 3.9vw, 4.75rem)); }
+  .hero .lead { font-size: calc(0.94 * clamp(1.0625rem, 1rem + 0.35vw, 1.25rem)); }
+  .rain-zone .section-head h2, .tl-cover h2, .about-band h2, .founder-band h2, .related-band .section-head h2 { font-size: calc(0.85 * clamp(2.25rem, 1.1rem + 3.4vw, 4rem)); }
+  .navy-band .section-head h2 { font-size: calc(0.85 * clamp(2.6rem, 1.4rem + 4.8vw, 6rem)); }
+  .green-close-h { font-size: calc(0.85 * clamp(2.8rem, 1.2rem + 5vw, 6.5rem)); }
+  .marquee-row a { font-size: calc(0.85 * clamp(2.2rem, 1.2rem + 4vw, 5.5rem)); }
+  html.fx-off .marquee-row a { font-size: calc(0.85 * clamp(1.6rem, 1rem + 2.4vw, 3rem)); }
+  .page-hero h1 { font-size: calc(0.85 * clamp(2.6rem, 1.3rem + 4.6vw, 5.5rem)); }
+  .contact-hero h1 { font-size: calc(0.85 * clamp(2.4rem, 1.2rem + 3.4vw, 4.4rem)); }
+  .page-hero .lead { font-size: calc(0.94 * clamp(1.0625rem, 1rem + 0.4vw, 1.3rem)); }
+  .group h2 { font-size: calc(0.85 * clamp(2rem, 1.2rem + 2.6vw, 3.4rem)); }
+  .case h3 { font-size: calc(0.85 * clamp(1.7rem, 1.2rem + 1.6vw, 2.6rem)); }
+  .case-result { font-size: calc(0.94 * clamp(1.0625rem, 1rem + 0.35vw, 1.25rem)); }
+  .case-quote blockquote p { font-size: calc(0.92 * clamp(1.15rem, 1rem + 0.55vw, 1.45rem)); }
+  .rule-n { font-size: calc(0.85 * clamp(2.4rem, 1.6rem + 2.4vw, 3.6rem)); }
+  .service-promise { font-size: calc(0.9 * clamp(1.4rem, 1rem + 1.4vw, 2.3rem)); }
+  .service-body h3 { font-size: calc(0.92 * clamp(1.3rem, 1rem + 1.05vw, 2rem)); }
+  .problem h3 { font-size: 1.15rem; }
+  .tl-card h3, .offer h3 { font-size: calc(0.92 * clamp(1.2rem, 1rem + 0.6vw, 1.5rem)); }
+  .rule-t { font-size: calc(0.92 * clamp(1.35rem, 1.05rem + 1vw, 2rem)); }
+  .policy-item .rule-t { font-size: calc(0.92 * clamp(1.3rem, 1.05rem + 0.9vw, 1.9rem)); }
+  .founder-name { font-size: calc(0.92 * clamp(1.4rem, 1.1rem + 1vw, 2rem)); }
+  .founder-text { font-size: 1rem; }
+  .related-name { font-size: calc(0.92 * clamp(1.2rem, 1rem + 0.6vw, 1.45rem)); }
+  .seo-explainer, .group-promise { font-size: calc(0.92 * clamp(1.15rem, 1rem + 0.6vw, 1.5rem)); }
+  .faq summary { font-size: 1.0625rem; }
+  .green-close-text { font-size: 1.0625rem; }
+  .action-label { font-size: calc(0.92 * clamp(1.15rem, 1rem + 0.6vw, 1.6rem)); }
+}

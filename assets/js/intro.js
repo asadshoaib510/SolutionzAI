@@ -11,7 +11,10 @@
    Only with JavaScript and motion allowed, and not with ?intro=off. A click, a key, a wheel turn or a touch skips it.
    Once per visit, on the homepage only (founder, 26 September 2026): base.html leaves it out when this tab has already
    seen it (sessionStorage sz-intro) and on every other page; ?intro=on shows it again.
-   Fires 'intro:done' on window when the page is revealed (the hero and the logo start then). */
+   Fires 'intro:done' on window when the page is revealed (the hero and the logo start then).
+   29 September 2026 (founder: "Shorten to ~1.5 s"; it took about 6 s): one icon, the signal line written five times as
+   fast, a short pause and a quicker wave, so the page shows after about 1.5 s. The headline and its paragraph are already
+   in place underneath (lower.js, console.js), so they are there as it lifts. */
 (function () {
   'use strict';
   var root = document.documentElement;
@@ -57,7 +60,7 @@
   }
 
   var progress = 0, finished = false, typedAt = 0, lastLoad = -999, lastIcon = -1;
-  var t0 = performance.now(), ICON_MS = 480, ICON_N = 3, START = ICON_MS * ICON_N + 250, STEP = 30, LAG = 30, PAUSE = 400;
+  var t0 = performance.now(), ICON_MS = 400, ICON_N = 1, GAP = 80, START = ICON_MS * ICON_N + GAP, STEP = 6, LAG = 18, PAUSE = 120;
   window.addEventListener('load', function () { progress = 1; });
   var tick = setInterval(function () { progress = Math.max(progress, Math.min(0.95, (performance.now() - t0) / 3000)); }, 100);
 
@@ -65,7 +68,7 @@
     if (finished) return;
     var ms = t - t0;
     /* 1. the bracket frame with an icon fading in, then the next */
-    if (ms < START - 250) {
+    if (ms < START - GAP) {
       var k = Math.floor(ms / ICON_MS);
       if (k !== lastIcon) { lastIcon = k; icon.setAttribute('d', ICONS[(k * 2 + 1) % ICONS.length]); frameEl.classList.remove('show'); void frameEl.offsetWidth; frameEl.classList.add('show'); }
     } else if (!frameEl.classList.contains('gone')) frameEl.classList.add('gone');
@@ -104,7 +107,7 @@
     var cols = Math.ceil(window.innerWidth / size), rows = Math.ceil(window.innerHeight / size);
     cells.style.gridTemplateColumns = 'repeat(' + cols + ', ' + size + 'px)';
     cells.style.gridTemplateRows = 'repeat(' + rows + ', ' + size + 'px)';
-    var STAGGER = 42, frag = document.createDocumentFragment();
+    var STAGGER = 24, frag = document.createDocumentFragment();
     for (var r = 0; r < rows; r++) for (var c2 = 0; c2 < cols; c2++) {
       var d = document.createElement('i');
       d.style.animationDelay = (((cols - 1 - c2) + (rows - 1 - r)) * STAGGER + ((Math.random() * 40) | 0)) + 'ms';
@@ -113,7 +116,7 @@
     cells.appendChild(frag);
     el.classList.add('out');
     var total = (cols + rows) * STAGGER + 480;
-    setTimeout(function () { root.classList.remove('intro-on'); window.__introDone = true; window.dispatchEvent(new Event('intro:done')); }, Math.min(500, total));
+    setTimeout(function () { root.classList.remove('intro-on'); window.__introDone = true; window.dispatchEvent(new Event('intro:done')); }, Math.min(260, total));
     setTimeout(function () { el.remove(); }, total + 60);
   }
   ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach(function (e) { window.addEventListener(e, finish, { once: true, passive: true }); });

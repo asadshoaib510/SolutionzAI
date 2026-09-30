@@ -1,0 +1,5 @@
+GSAP 3.13.0 (https://gsap.com), self-hosted since 29 September 2026 at the founder's request.
+Downloaded from https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ : gsap.min.js, ScrollTrigger.min.js,
+ScrambleTextPlugin.min.js, DrawSVGPlugin.min.js. Each file's SHA-512 matched the SRI hash cdnjs publishes
+(https://api.cdnjs.com/libraries/gsap/3.13.0?fields=sri). The files are unchanged; their license notice is at the top
+of each (GSAP's standard license, https://gsap.com/standard-license).

@@ -1,0 +1,5 @@
+# Solutionz AI: search engines and AI assistants are welcome to read every page.
+User-agent: *
+Allow: /
+
+Sitemap: https://asadshoaib510.github.io/SolutionzAI/sitemap.xml
