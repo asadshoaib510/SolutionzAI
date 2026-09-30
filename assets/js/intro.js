@@ -12,7 +12,8 @@
    Once per visit, on the homepage only (founder, 26 September 2026): base.html leaves it out when this tab has already
    seen it (sessionStorage sz-intro) and on every other page; ?intro=on shows it again. Since 30 September 2026 once per
    visitor (localStorage sz-intro; founder: "make it 3 seconds, once per visitor in both desktop and phone"), and slowed to
-   about 3 s so the line can be read: up to 60 letters stay on screen as it passes.
+   about 3 s so the line can be read: up to 60 letters stay on screen as it passes. Later the same day once per visit again
+   (a visit being one tab), after trying every open; base.html decides.
    Fires 'intro:done' on window when the page is revealed (the hero and the logo start then).
    29 September 2026 (founder: "Shorten to ~1.5 s"; it took about 6 s): one icon, the signal line written five times as
    fast, a short pause and a quicker wave, so the page shows after about 1.5 s. The headline and its paragraph are already
@@ -42,7 +43,6 @@
     '<p class="intro-text"></p><p class="intro-load">Loading...</p><div class="intro-cells"></div>';
   document.body.appendChild(el);
   root.classList.add('intro-on'); root.classList.remove('intro-pre');
-  try { localStorage.setItem('sz-intro', '1'); } catch (e) { /* storage blocked: it plays on the next load too */ }
   var frameEl = el.querySelector('.intro-frame'), icon = el.querySelector('.intro-frame path');
   var para = el.querySelector('.intro-text'), load = el.querySelector('.intro-load'), cells = el.querySelector('.intro-cells');
 

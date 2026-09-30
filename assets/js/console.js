@@ -5,7 +5,8 @@
                  founder's recording); parallax as the hero scrolls away
    2 workflow    the platform plates rise, lines draw into the code card (scrubbed), pulses run down them while the
                  section is on screen, the card writes itself line by line
-   3 problems    glass cards: batched entrance (engine.js), columns drift at different speeds, each tilts to the pointer
+   3 problems    glass cards: batched entrance (engine.js), columns drift at different speeds, each tilts to the pointer;
+                 under each, a line draws down to the service that fixes it, which then lights (30 September 2026)
    4 services    pinned on desktop: the list steps through six stops (snapped); the matching glass panel slides out.
                  Not pinned (phones, tablets, short screens; 29 September 2026): the stack stays in view while the list
                  scrolls past, each service slides in and lights its panel and its green line as it comes up under the
@@ -91,6 +92,8 @@
   /* pulses run only while the workflow section is on screen */
   var connect = document.querySelector('[data-connect]');
   if (connect) new IntersectionObserver(function (es) { connect.classList.toggle('is-live', es[0].isIntersecting); }, { threshold: 0.15 }).observe(connect);
+  var pgrid = document.querySelector('.problem-grid');
+  if (pgrid) new IntersectionObserver(function (es) { pgrid.classList.toggle('is-live', es[0].isIntersecting); }, { threshold: 0.1 }).observe(pgrid);
 
   F.mm.add({ desktop: '(min-width: 1024px) and (min-height: 700px)', compact: '(max-width: 1023px), (max-height: 699px)', wide: '(min-width: 900px)', small: '(max-width: 767px)', reduceMotion: '(prefers-reduced-motion: reduce)' }, function (ctx) {
     var c = ctx.conditions;
@@ -123,7 +126,15 @@
     wf.fromTo('[data-code]', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.35 }, 0.4)
       .fromTo('[data-cl]', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', stagger: 0.1, duration: 0.22, ease: 'none' }, 0.62);
 
-    /* ---- 3. problems: the four columns drift at different speeds (yPercent, so the batched entrance keeps y) ---- */
+    /* ---- 3. problems: each card's line draws down to the service that fixes it, which lights up once the line is drawn
+       (30 September 2026); the pulses run while the section is on screen ---- */
+    q('.problem-col').forEach(function (col) {
+      var wire = col.querySelector('[data-wire]');
+      if (!wire) return;
+      gsap.fromTo(wire, { scaleY: 0 }, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: wire, start: 'top 92%', end: 'bottom 74%', scrub: F.scrub(0.4) } });
+      ScrollTrigger.create({ trigger: wire, start: 'bottom 74%', end: 'max', toggleClass: { targets: col, className: 'is-fixed' } });
+    });
+    /* ---- the four columns drift at different speeds (yPercent, so the batched entrance keeps y) ---- */
     if (c.wide) q('[data-drift]').forEach(function (el) {
       var d = parseFloat(el.getAttribute('data-drift')) / 4;
       gsap.fromTo(el, { yPercent: d }, { yPercent: -d, ease: 'none', scrollTrigger: { trigger: '.problem-grid', start: 'top bottom', end: 'bottom top', scrub: true } });

@@ -91,21 +91,6 @@
           pin: true, pinSpacing: true, scrub: F.scrub(0.5), anticipatePin: 1, invalidateOnRefresh: true, refreshPriority: 1, id: 'process' } });
         move.fromTo(track, { x: 0 }, { x: function () { return -dist(); }, ease: 'none', duration: 1 }, 0)
             .fromTo(fill, { scaleX: function () { return lit(0); } }, { scaleX: 1, ease: 'none', duration: 1 }, 0);
-        /* the logo plate draws its stem and rises in as the section scrolls up into place, and the logo assembles as it
-           does in the header (logo.js), scrubbed, so scrolling back takes it apart again */
-        var brand = process.querySelector('[data-tl-brand]');
-        if (brand) {
-          var bt = gsap.timeline(), lf = q('.lg-f', brand), ll = q('.lg-l, .lg-d', brand);
-          bt.fromTo(brand.querySelector('[data-tl-stem]'), { '--g': 0 }, { '--g': 1, duration: 0.35, ease: 'none' }, 0)
-            .fromTo(brand.querySelector('[data-tl-dot]'), { scale: 0 }, { scale: 1, duration: 0.12, ease: 'none' }, 0.3)
-            .fromTo(brand.querySelector('.tl-plate'), { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: 'power2.out' }, 0.28);
-          if (lf.length === 4) {
-            bt.fromTo([lf[0], lf[3]], { x: function (i) { return i ? 320 : -320; }, y: function (i) { return i ? -480 : 480; }, autoAlpha: 0 }, { x: 0, y: 0, autoAlpha: 1, duration: 0.4, stagger: 0.05, ease: 'power3.out' }, 0.4)
-              .fromTo([lf[1], lf[2]], { scale: 0, autoAlpha: 0, transformOrigin: '0% 0%' }, { scale: 1, autoAlpha: 1, duration: 0.3, stagger: 0.04, ease: 'back.out(1.8)' }, 0.62);
-          }
-          if (ll.length) bt.fromTo(ll, { y: 70, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.35, stagger: 0.01, ease: 'power3.out' }, 0.5);
-          ScrollTrigger.create({ trigger: process, start: 'top 75%', end: 'top 10%', scrub: F.scrub(0.5), animation: bt });
-        }
         steps.concat(end ? [end] : []).forEach(function (st) {
           var tl = gsap.timeline();
           if (st === end) tl.fromTo(end, { autoAlpha: 0, x: 40 }, { autoAlpha: 1, x: 0, duration: 1, ease: 'power2.out' }, 0);

@@ -21,14 +21,16 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://asadshoaib510.github.io/SolutionzAI/services/dashboards/#service", "name": "Custom Dashboards & Reporting", "serviceType": "Custom Dashboards and Reporting", "description": "Dashboards and scheduled reports drawn from the systems you already run: leads, bookings, unpaid invoices, with the data cleaned so the numbers can be trusted.", "url": "https://asadshoaib510.github.io/SolutionzAI/services/dashboards/", "provider": {"@id": "https://asadshoaib510.github.io/SolutionzAI/#organization", "@type": "Organization", "name": "Solutionz AI"}, "areaServed": {"@type": "Country", "name": "United States"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://asadshoaib510.github.io/SolutionzAI/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://asadshoaib510.github.io/SolutionzAI/services/"}, {"@type": "ListItem", "position": 3, "name": "Custom Dashboards & Reporting", "item": "https://asadshoaib510.github.io/SolutionzAI/services/dashboards/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is in the Monday summary?", "acceptedAnswer": {"@type": "Answer", "text": "Last week's bookings, invoices unpaid for more than 30 days, and new leads and where they came from. It arrives on its own at 7 am, and one click opens the dashboard behind it."}}, {"@type": "Question", "name": "Where do the numbers come from?", "acceptedAnswer": {"@type": "Answer", "text": "From the systems that already hold them, drawn live. When a number looks wrong, you can see which system it came from and fix it there."}}, {"@type": "Question", "name": "What if our data is messy?", "acceptedAnswer": {"@type": "Answer", "text": "We clean it up first. Duplicates, mismatched names and missing fields are fixed, so the report and the system agree."}}]}]}</script><link rel="preload" href="../../assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/css/site.css?v=644cd10a">
+<link rel="stylesheet" href="../../assets/css/site.css?v=68f16065">
 <script>
 (function(){var d=document.documentElement,q=new URLSearchParams(location.search);
 var m=q.get('motion');if(m==='on'||m==='off')d.setAttribute('data-motion',m);
 var off=d.getAttribute('data-motion')==='off'||(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
 d.classList.add(off?'fx-off':'fx-on');
-var iq=q.get('intro'),seen=false;try{seen=localStorage.getItem('sz-intro')==='1'}catch(e){}
-if(!off&&false&&iq!=='off'&&(iq==='on'||(!seen&&!location.hash)))d.classList.add('intro-pre');
+var iq=q.get('intro'),seen=false,again=false;try{var ss=sessionStorage,n=performance.getEntriesByType('navigation')[0],t=n?n.type:'navigate',left=ss.getItem('sz-left');
+seen=ss.getItem('sz-visit')==='1';again=t==='back_forward'&&left===location.pathname;ss.removeItem('sz-left');ss.setItem('sz-visit','1');
+addEventListener('pagehide',function(e){if(!e.persisted)try{ss.setItem('sz-left',location.pathname)}catch(x){}})}catch(e){}
+if(!off&&false&&iq!=='off'&&(iq==='on'||((!seen||again)&&!location.hash)))d.classList.add('intro-pre');
 if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on');d.classList.add('fx-off')}},7000)})();
 </script>
 <!-- GSAP 3.13 (every plugin is free since 3.13), self-hosted since 29 September 2026 (the four cdnjs files, checked against
@@ -39,14 +41,14 @@ if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on
 <script src="../../assets/vendor/gsap-3.13.0/ScrambleTextPlugin.min.js" defer></script>
 <script src="../../assets/vendor/gsap-3.13.0/DrawSVGPlugin.min.js" defer></script>
 <script src="../../assets/vendor/lenis.min.js?v=42bf5944" defer></script>
-<script src="../../assets/js/intro.js?v=e4908250" defer></script>
+<script src="../../assets/js/intro.js?v=5134961c" defer></script>
 <script src="../../assets/js/site.js?v=53e50d63" defer></script>
 <script src="../../assets/js/engine.js?v=32f8f51d" defer></script>
 <script src="../../assets/js/logo.js?v=5a22eadb" defer></script>
 <script src="../../assets/js/lower.js?v=a4451daf" defer></script>
 <script src="../../assets/js/rain.js?v=2f94d2c3" defer></script>
 <script src="../../assets/js/pages.js?v=e2793279" defer></script>
-<script src="../../assets/js/sections.js?v=7b76346d" defer></script>
+<script src="../../assets/js/sections.js?v=832b34b8" defer></script>
 </head>
 <body class="fresh fresh-console">
 <a class="skip" href="#main">Skip to content</a>
