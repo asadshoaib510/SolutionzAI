@@ -21,7 +21,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://asadshoaib510.github.io/SolutionzAI/services/ai-agents/#service", "name": "AI Agents & Assistants", "serviceType": "AI Voice Agents & Assistants for Business", "description": "AI voice and chat agents that answer calls, book appointments and hand off to a person with a summary, around the clock. Book a free 30-minute call.", "url": "https://asadshoaib510.github.io/SolutionzAI/services/ai-agents/", "provider": {"@id": "https://asadshoaib510.github.io/SolutionzAI/#organization", "@type": "Organization", "name": "Solutionz AI"}, "areaServed": {"@type": "Country", "name": "United States"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://asadshoaib510.github.io/SolutionzAI/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://asadshoaib510.github.io/SolutionzAI/services/"}, {"@type": "ListItem", "position": 3, "name": "AI Agents & Assistants", "item": "https://asadshoaib510.github.io/SolutionzAI/services/ai-agents/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What can an AI voice agent do for us?", "acceptedAnswer": {"@type": "Answer", "text": "Answer your business line, or the overflow and after-hours calls; book, reschedule or cancel appointments; answer the questions your team hears every day; and route what it cannot handle."}}, {"@type": "Question", "name": "What happens when a caller asks for a person?", "acceptedAnswer": {"@type": "Answer", "text": "They are transferred, or their details and question are passed to your team for a call back. Either way, your team gets a written summary first."}}, {"@type": "Question", "name": "Can the agent book straight into our calendar?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The voice agent checks your calendar, books the slot, sends a confirmation text and posts a summary to your team."}}]}]}</script><link rel="preload" href="../../assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/css/site.css?v=68f16065">
+<link rel="stylesheet" href="../../assets/css/site.css?v=9ecb1afb">
 <script>
 (function(){var d=document.documentElement,q=new URLSearchParams(location.search);
 var m=q.get('motion');if(m==='on'||m==='off')d.setAttribute('data-motion',m);
@@ -300,7 +300,9 @@ if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on
   </div>
 </section>
 
-<!-- green band: the closing invitation, giant navy type and two action cards -->
+<!-- green band: the closing invitation, giant navy type and two action cards; since 30 September 2026 (founder: "two blue
+     boxes are too big, make it smaller and/or add QR Code") each card is one row, and the business card's QR code sits
+     under them, the whole card saving the contact (as on the Contact page, which has no green band) -->
 <section class="green-close" id="start">
   <div class="container green-close-grid">
     <h2 class="green-close-h" data-split>Ready for less manual work?</h2>
@@ -313,6 +315,10 @@ if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on
       <a class="action-card reveal-up" style="--i: 2" href="mailto:info@solutionzai.com">
         <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         <span class="action-label">Or email info@solutionzai.com <span class="arrow" aria-hidden="true">↗</span></span>
+      </a>
+      <a class="action-card action-qr reveal-up" style="--i: 3" href="../../assets/solutionzai-card.vcf" download="asad-shoaib.vcf">
+        <span class="action-qr-tile"><img src="../../assets/img/qr-vcard.png" width="600" height="600" alt="QR code that adds the Solutionz AI phone number and email to your contacts" loading="lazy" decoding="async"></span>
+        <span class="action-qr-text"><span class="action-label">Save our contact</span><span class="action-note">Scan with your phone camera to add our phone number and email to your contacts.</span></span>
       </a>
     </div>
   </div>

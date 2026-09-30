@@ -21,7 +21,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Service", "@id": "https://asadshoaib510.github.io/SolutionzAI/services/automation/#service", "name": "Business Automation", "serviceType": "Business Process Automation Services", "description": "Invoicing, payment reminders, bookings, documents and notifications that run on their own, with your team in charge. Book a free 30-minute call.", "url": "https://asadshoaib510.github.io/SolutionzAI/services/automation/", "provider": {"@id": "https://asadshoaib510.github.io/SolutionzAI/#organization", "@type": "Organization", "name": "Solutionz AI"}, "areaServed": {"@type": "Country", "name": "United States"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://asadshoaib510.github.io/SolutionzAI/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://asadshoaib510.github.io/SolutionzAI/services/"}, {"@type": "ListItem", "position": 3, "name": "Business Automation", "item": "https://asadshoaib510.github.io/SolutionzAI/services/automation/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which tasks can you automate?", "acceptedAnswer": {"@type": "Answer", "text": "Scheduled invoice sending, payment reminders and follow-ups, appointment booking and reminders, document and form generation, and email and SMS notifications. Most projects start with one of these and grow from there."}}, {"@type": "Question", "name": "What happens when an invoice is paid?", "acceptedAnswer": {"@type": "Answer", "text": "The reminders stop the moment payment lands. Payments are matched as they arrive, and your team sees a short list of the accounts that still need a phone call."}}, {"@type": "Question", "name": "Can we pause or change an automation ourselves?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You set the schedule once, and anyone on your side can pause or change any step."}}]}]}</script><link rel="preload" href="../../assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../../assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../../assets/css/site.css?v=68f16065">
+<link rel="stylesheet" href="../../assets/css/site.css?v=9ecb1afb">
 <script>
 (function(){var d=document.documentElement,q=new URLSearchParams(location.search);
 var m=q.get('motion');if(m==='on'||m==='off')d.setAttribute('data-motion',m);
@@ -305,7 +305,9 @@ if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on
   </div>
 </section>
 
-<!-- green band: the closing invitation, giant navy type and two action cards -->
+<!-- green band: the closing invitation, giant navy type and two action cards; since 30 September 2026 (founder: "two blue
+     boxes are too big, make it smaller and/or add QR Code") each card is one row, and the business card's QR code sits
+     under them, the whole card saving the contact (as on the Contact page, which has no green band) -->
 <section class="green-close" id="start">
   <div class="container green-close-grid">
     <h2 class="green-close-h" data-split>Ready for less manual work?</h2>
@@ -318,6 +320,10 @@ if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on
       <a class="action-card reveal-up" style="--i: 2" href="mailto:info@solutionzai.com">
         <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         <span class="action-label">Or email info@solutionzai.com <span class="arrow" aria-hidden="true">↗</span></span>
+      </a>
+      <a class="action-card action-qr reveal-up" style="--i: 3" href="../../assets/solutionzai-card.vcf" download="asad-shoaib.vcf">
+        <span class="action-qr-tile"><img src="../../assets/img/qr-vcard.png" width="600" height="600" alt="QR code that adds the Solutionz AI phone number and email to your contacts" loading="lazy" decoding="async"></span>
+        <span class="action-qr-text"><span class="action-label">Save our contact</span><span class="action-note">Scan with your phone camera to add our phone number and email to your contacts.</span></span>
       </a>
     </div>
   </div>

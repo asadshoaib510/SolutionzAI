@@ -592,6 +592,19 @@ html.fx-off .marquee-row a { white-space: normal; font-size: clamp(1.6rem, 1rem 
 .action-card:hover, .action-card:focus-visible { background: #fff; border-color: #fff; color: var(--n-navy); }
 .action-card:hover .arrow { transform: translate(3px, -3px); }
 .green-close :focus-visible { outline-color: var(--n-navy); }
+/* smaller cards (30 September 2026): the icon beside the words, one row each; then the QR card, the code on a white tile
+   (so any phone camera reads it) beside its title and note */
+.action-card { flex-direction: row; align-items: center; justify-content: flex-start; gap: 1rem; min-height: 0; padding: 0.95rem 1.2rem; }
+.action-icon { flex: none; width: 2.75rem; height: 2.75rem; padding: 0.5rem; }
+.action-label { font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem); }
+.action-qr { gap: 1.2rem; padding: 0.85rem 1.2rem 0.85rem 0.85rem; }
+.action-qr-tile { flex: none; display: block; width: clamp(92px, 5rem + 2vw, 116px); padding: 5px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 3px var(--n-green); }
+.action-qr-tile img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.action-qr-text { display: grid; gap: 0.35rem; }
+.action-note { font: 500 0.875rem/1.5 var(--font-mono); color: #fff; }
+.action-qr:hover .action-note, .action-qr:focus-visible .action-note { color: var(--n-navy); }
+html.fx-on .action-qr-tile { animation: qr-glow 2.8s ease-in-out infinite; }
+@keyframes qr-glow { 0%, 100% { box-shadow: 0 0 0 3px var(--n-green); } 50% { box-shadow: 0 0 0 3px var(--n-green), 0 0 18px rgba(66, 206, 51, 0.9); } }
 
 /* footer after solais.ai: rising wordmark, cut-corner light panel (light in both themes, so the logo stays navy and green) */
 .sz-footer { position: relative; overflow: hidden; color-scheme: light; padding: clamp(3rem, 2rem + 4vw, 6rem) 0 clamp(1.5rem, 1rem + 2vw, 3rem);
@@ -1314,7 +1327,11 @@ html.fx-on .flow.is-live .flow-node.is-lit + .flow-node::after { opacity: 1; ani
 .sig-sat { position: absolute; display: grid; place-items: center; width: 13%; height: 13%; margin: -6.5% 0 0 -6.5%; border-radius: 50%;
   background: rgba(15, 34, 72, 0.95); border: 1px solid rgba(125, 182, 255, 0.35); box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4), 0 0 18px rgba(66, 206, 51, 0.15); }
 .sig-sat svg { width: 46%; height: 46%; fill: none; stroke: var(--n-green); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.sig-mail { left: 82%; top: 14%; } .sig-chat { left: 10%; top: 38%; } .sig-cal { left: 20%; top: 76%; }
+.sig-mail { left: 82%; top: 14%; } .sig-chat { left: 10%; top: 38%; } .sig-cal { left: 20%; top: 76%; } .sig-qr { left: 91%; top: 64%; }
+/* the QR code's scan: a green line runs down it and fades, over and over (30 September 2026) */
+.sig-scan { position: absolute; left: 20%; right: 20%; top: 26%; height: 2px; border-radius: 2px; background: var(--n-green); box-shadow: 0 0 8px var(--n-green), 0 0 14px rgba(66, 206, 51, 0.7); opacity: 0; pointer-events: none; }
+html.fx-on .sig-scan { animation: sig-scan 2.6s ease-in-out infinite; }
+@keyframes sig-scan { 0% { top: 26%; opacity: 0; } 12% { opacity: 1; } 55% { top: 72%; opacity: 1; } 68%, 100% { top: 72%; opacity: 0; } }
 html.fx-on .sig-ring { animation: sig-pulse 4.2s cubic-bezier(0.25, 0.6, 0.3, 1) infinite; }
 html.fx-on .sig-r2 { animation-delay: 0.25s; } html.fx-on .sig-r3 { animation-delay: 0.5s; }
 @keyframes sig-pulse { 0%, 18% { transform: scale(0.55); opacity: 0; } 34% { opacity: 1; } 70% { transform: scale(1.04); opacity: 0.7; } 100% { transform: scale(1.12); opacity: 0; } }
@@ -1324,7 +1341,7 @@ html.fx-on .sig-core { animation: sig-core 4.2s cubic-bezier(0.5, 0, 0.3, 1) inf
 html.fx-on .sig-orbit { animation: sig-turn 26s linear infinite; }
 @keyframes sig-turn { to { transform: rotate(360deg); } }
 html.fx-on .sig-sat { animation: sig-float 5s ease-in-out infinite; }
-html.fx-on .sig-chat { animation-delay: -1.6s; } html.fx-on .sig-cal { animation-delay: -3.2s; }
+html.fx-on .sig-chat { animation-delay: -1.6s; } html.fx-on .sig-cal { animation-delay: -3.2s; } html.fx-on .sig-qr { animation-delay: -4.2s; }
 @keyframes sig-float { 0%, 100% { transform: translate3d(0, 0, 30px); } 50% { transform: translate3d(0, -8px, 30px); } }
 /* over the signal, the phone rings: a quick shake, the rings closer together */
 html.fx-on .signal:hover .sig-core svg, html.fx-on .signal.is-near .sig-core svg { animation: sig-ringing 0.9s ease-in-out infinite; }
@@ -1360,11 +1377,25 @@ html.fx-on .signal.is-near .sig-ring { animation-duration: 2.6s; }
 .call-head { display: flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-3); }
 .call-head h2 { margin: 0; font-size: clamp(1.4rem, 1.15rem + 0.8vw, 1.9rem); line-height: 1.1; letter-spacing: -0.02em; }
 .call-note { margin: 0 0 var(--s-4); font: 500 0.875rem/1.55 var(--font-mono); color: var(--ink-2); }
-.call-open { display: grid; place-items: center; gap: 0.5rem; padding: 1.4rem 1rem; border-radius: 14px; border: 1.5px dashed rgba(125, 182, 255, 0.45); color: var(--ink);
-  font: 700 0.8125rem/1.3 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: border-color 0.25s ease, background-color 0.25s ease, color 0.25s ease; }
-.call-open svg { width: 1.7rem; height: 1.7rem; fill: none; stroke: var(--n-green); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s ease; }
-.call-open:hover, .call-open:focus-visible { border-color: var(--n-green); background: rgba(66, 206, 51, 0.1); color: #fff; }
-.call-open:hover svg, .call-open:focus-visible svg { transform: translateY(-3px) scale(1.08); }
+/* the calendar (30 September 2026): a week of times in miniature, five columns by three rows, the free ones green and
+   breathing in a slow wave, one picked and glowing; under it a green button. The whole card opens the calendar */
+.call-open { display: grid; gap: 0.9rem; padding: 1rem; border-radius: 14px; border: 1px solid rgba(66, 206, 51, 0.35); background: rgba(66, 206, 51, 0.05);
+  text-decoration: none; transition: border-color 0.25s ease, background-color 0.25s ease; }
+.cal-week { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.cal-week i { height: 14px; border-radius: 5px; background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.06); transition: background-color 0.3s ease; }
+.cal-week i.is-free { background: rgba(66, 206, 51, 0.42); border-color: rgba(66, 206, 51, 0.5); }
+.cal-week i.is-pick { background: var(--n-green); border-color: #7BE66C; box-shadow: 0 0 14px rgba(66, 206, 51, 0.85); }
+html.fx-on .cal-week i.is-free { animation: cal-free 3.2s ease-in-out infinite; animation-delay: calc(var(--k) * -0.35s); }
+html.fx-on .cal-week i.is-pick { animation: cal-pick 1.8s ease-in-out infinite; }
+@keyframes cal-free { 0%, 100% { background-color: rgba(66, 206, 51, 0.28); } 50% { background-color: rgba(66, 206, 51, 0.6); } }
+@keyframes cal-pick { 0%, 100% { box-shadow: 0 0 8px rgba(66, 206, 51, 0.6); transform: scale(1); } 50% { box-shadow: 0 0 20px rgba(66, 206, 51, 1); transform: scale(1.06); } }
+.cal-go { display: flex; align-items: center; justify-content: center; gap: 0.6rem; padding: 0.85rem 1rem; border-radius: 12px; background: var(--n-green); color: var(--n-navy);
+  font: 700 0.8125rem/1.3 var(--font-mono); letter-spacing: 0.1em; text-transform: uppercase; box-shadow: 0 0 22px rgba(66, 206, 51, 0.35); transition: background-color 0.25s ease, box-shadow 0.25s ease; }
+.cal-go svg { width: 1.35rem; height: 1.35rem; flex: none; fill: none; stroke: var(--n-navy); stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.3s ease; }
+.call-open:hover, .call-open:focus-visible { border-color: var(--n-green); background: rgba(66, 206, 51, 0.1); }
+.call-open:hover .cal-go, .call-open:focus-visible .cal-go { background: #5BDB4C; box-shadow: 0 0 30px rgba(66, 206, 51, 0.6); }
+.call-open:hover .cal-go svg, .call-open:focus-visible .cal-go svg { transform: translateY(-2px) scale(1.08); }
+.call-open:hover .cal-week i.is-free { background-color: rgba(66, 206, 51, 0.62); }
 .direct-h { margin: 0 0 var(--s-3); font: 700 0.8125rem/1.4 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
 .direct-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
 .direct-mini { display: grid; gap: 0.35rem; padding: 1rem 1.1rem; border-radius: 16px; background: linear-gradient(155deg, var(--glass), var(--glass-2)); border: 1px solid var(--glass-line);
@@ -1529,5 +1560,5 @@ html.fx-on .nf-top, html.fx-on .nf-d { transition: background 0.35s ease, color 
   .seo-explainer, .group-promise { font-size: calc(0.92 * clamp(1.15rem, 1rem + 0.6vw, 1.5rem)); }
   .faq summary { font-size: 1.0625rem; }
   .green-close-text { font-size: 1.0625rem; }
-  .action-label { font-size: calc(0.92 * clamp(1.15rem, 1rem + 0.6vw, 1.6rem)); }
+  .action-label { font-size: calc(0.92 * clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem)); }
 }
