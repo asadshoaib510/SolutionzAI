@@ -10,7 +10,9 @@
    4. The panel breaks into large squares that fade out in a diagonal wave from the bottom-right, revealing the page.
    Only with JavaScript and motion allowed, and not with ?intro=off. A click, a key, a wheel turn or a touch skips it.
    Once per visit, on the homepage only (founder, 26 September 2026): base.html leaves it out when this tab has already
-   seen it (sessionStorage sz-intro) and on every other page; ?intro=on shows it again.
+   seen it (sessionStorage sz-intro) and on every other page; ?intro=on shows it again. Since 30 September 2026 once per
+   visitor (localStorage sz-intro; founder: "make it 3 seconds, once per visitor in both desktop and phone"), and slowed to
+   about 3 s so the line can be read: up to 60 letters stay on screen as it passes.
    Fires 'intro:done' on window when the page is revealed (the hero and the logo start then).
    29 September 2026 (founder: "Shorten to ~1.5 s"; it took about 6 s): one icon, the signal line written five times as
    fast, a short pause and a quicker wave, so the page shows after about 1.5 s. The headline and its paragraph are already
@@ -40,7 +42,7 @@
     '<p class="intro-text"></p><p class="intro-load">Loading...</p><div class="intro-cells"></div>';
   document.body.appendChild(el);
   root.classList.add('intro-on'); root.classList.remove('intro-pre');
-  try { sessionStorage.setItem('sz-intro', '1'); } catch (e) { /* storage blocked: it plays on the next load too */ }
+  try { localStorage.setItem('sz-intro', '1'); } catch (e) { /* storage blocked: it plays on the next load too */ }
   var frameEl = el.querySelector('.intro-frame'), icon = el.querySelector('.intro-frame path');
   var para = el.querySelector('.intro-text'), load = el.querySelector('.intro-load'), cells = el.querySelector('.intro-cells');
 
@@ -60,7 +62,7 @@
   }
 
   var progress = 0, finished = false, typedAt = 0, lastLoad = -999, lastIcon = -1;
-  var t0 = performance.now(), ICON_MS = 400, ICON_N = 1, GAP = 80, START = ICON_MS * ICON_N + GAP, STEP = 6, LAG = 18, PAUSE = 120;
+  var t0 = performance.now(), ICON_MS = 450, ICON_N = 1, GAP = 100, START = ICON_MS * ICON_N + GAP, STEP = 14, LAG = 60, PAUSE = 150;
   window.addEventListener('load', function () { progress = 1; });
   var tick = setInterval(function () { progress = Math.max(progress, Math.min(0.95, (performance.now() - t0) / 3000)); }, 100);
 

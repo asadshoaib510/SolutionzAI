@@ -54,11 +54,15 @@
     });
     document.addEventListener('click', function (e) { if (!menu.hidden && !menuBtn.parentNode.contains(e.target)) closeMenu(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !menu.hidden) { closeMenu(); menuBtn.focus(); } });
-    /* open on hover with a mouse, close when the pointer leaves the whole item */
+    /* open on hover with a mouse, close when the pointer leaves the whole item. 30 September 2026 (founder: "Sometimes when
+       I click on the 'Services' ... and hover my mouse to any service, the dropdown menu disappear"): coming back into the
+       item or its menu now always cancels a pending close (it was cancelled only while the menu was shut, so crossing the
+       gap above the menu let it close under the pointer), the gap is bridged (fresh.css .menu::before), and the close
+       waits a little longer */
     var item = menuBtn.parentNode;
     var leaveTimer;
-    item.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse' && menu.hidden) { clearTimeout(leaveTimer); openMenu(); hoverOpened = true; } });
-    item.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') leaveTimer = setTimeout(function () { closeMenu(); hoverOpened = false; }, 150); });
+    item.addEventListener('pointerenter', function (e) { if (e.pointerType !== 'mouse') return; clearTimeout(leaveTimer); if (menu.hidden) { openMenu(); hoverOpened = true; } });
+    item.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'mouse') return; clearTimeout(leaveTimer); leaveTimer = setTimeout(function () { closeMenu(); hoverOpened = false; }, 300); });
   }
 
   /* ---------- mobile navigation ---------- */

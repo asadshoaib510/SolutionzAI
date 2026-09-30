@@ -442,6 +442,9 @@ html.fx-on .mobile-nav:not([hidden]) { animation: nav-in 0.28s cubic-bezier(0.2,
 .lg-green { fill: #42CE33; }
 .site-header .menu-toggle { background: var(--n-navy); border-color: var(--n-navy); color: #fff; }
 .menu { box-shadow: 0 20px 60px rgba(4, 18, 48, 0.25); }
+/* an invisible bridge over the gap between "Services" and its menu, so the pointer never leaves the item on its way down
+   (30 September 2026) */
+.menu::before { content: ""; position: absolute; left: 0; right: 0; bottom: 100%; height: calc(0.5rem + 4px); }
 /* the Services item (28 September 2026): the word links to the overview, the chevron beside it opens the menu; the two
    read as one item */
 .has-menu { display: flex; align-items: center; border-radius: var(--radius-sm); }
@@ -680,8 +683,9 @@ html.fx-off .to-top path { animation: none; }
 html.fx-off .to-top .tt-2 { opacity: 0.5; }
 @media (prefers-reduced-motion: reduce) { .to-top path { animation: none; } .to-top .tt-2 { opacity: 0.5; } }
 @media (max-width: 599px) { .to-top svg { width: 1.45rem; height: 1.4rem; } }
-/* phones (29 September 2026): at the bottom centre the arrows sat on the text, so here they keep to the bottom-right corner */
-@media (max-width: 767px) { .to-top { left: auto; right: 0.5rem; margin-inline: 0; } }
+/* phones and tablets: no button since 30 September 2026 (founder: "remove back to top/scroll to top button as most phones
+   already have that built in"); it stays on desktop. Until then it kept to the bottom-right corner on phones */
+@media (max-width: 1023px) { .to-top { display: none; } }
 
 /* official-colour platform marks: marks drawn in black are shown white on the navy page (Zapier has its own dark file) */
 img.plogo-mono { filter: invert(1); }
@@ -1031,6 +1035,15 @@ html.fx-on .tl-end .tl-dot { animation: arrive 1.6s ease-out infinite; }
 .process.is-pinned .tl-end .tl-dot { left: -6px; top: var(--axis); margin-top: -5px; }
 .process.is-pinned .tl-end .btn { position: absolute; left: 1.5rem; top: var(--axis); margin-top: -1.6rem; }   /* no transform: the buttons lean toward the pointer */
 
+/* the logo plate at the start of the line (30 September 2026): above the line under the heading, on its own stem, like a
+   step; light behind the logo, which stays navy and green (memory: logo-never-white). It clears the heading by 39 px or
+   more on every screen that pins the timeline (checked from 1024 x 700 to 1905 x 902) */
+.tl-brand { display: none; }
+.process.is-pinned .tl-brand { display: block; position: absolute; left: 0; bottom: calc(100% - var(--axis) + 1.4rem); }
+.tl-plate { display: block; margin-left: 1.5rem; padding: clamp(0.9rem, 1.2vw, 1.25rem) clamp(1.1rem, 1.6vw, 1.6rem); border-radius: 18px;
+  background: #F3F5F7; border: 1px solid rgba(255, 255, 255, 0.7); box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35), 0 0 40px rgba(66, 206, 51, 0.12); }
+.tl-plate svg { display: block; width: clamp(230px, 19vw, 360px); height: auto; }
+
 /* ---------- 6 · platforms: the code card between two columns of names ---------- */
 .platforms { overflow: hidden; }
 .cloud { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 680px) minmax(0, 1fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: center; }
@@ -1073,7 +1086,8 @@ html.fx-on .tl-end .tl-dot { animation: arrive 1.6s ease-out infinite; }
   .service-list { order: 2; }
   html.fx-on .services:not(.is-pinned) .services-visual { margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter);
     background: linear-gradient(180deg, var(--ground) 80%, color-mix(in srgb, var(--ground) 0%, transparent)); }
-  .stack { height: 250px; }
+  .stack { height: 250px; translate: -62px 0; }   /* the row of panels recedes to the right, so the stack moves left to sit in the
+     middle of the screen (30 September 2026, founder: "the icons are not in the middle"; measured over the turn) */
   .stack-rig { width: 90px; }
 }
 @media (max-width: 767px) {
@@ -1082,7 +1096,7 @@ html.fx-on .tl-end .tl-dot { animation: arrive 1.6s ease-out infinite; }
   .strip-window { width: 100%; }
   .connect-keys { grid-template-columns: repeat(4, minmax(0, 1fr)); row-gap: 0.6rem; }
   .connect-keys .mini-key { max-width: 64px; }
-  .stack { height: 200px; }
+  .stack { height: 200px; translate: -56px 0; }
   .stack-rig { width: 76px; }
   .connect-lines { display: none; }
   /* phones (29 September 2026, founder: "no motion effects on scroll sections ... 'One automated workflow'"): four lines,
@@ -1438,7 +1452,7 @@ html.fx-on .nf-top, html.fx-on .nf-d { transition: background 0.35s ease, color 
   .groups-visual { display: none; }
   .group-icon.panel-face { display: grid; }
   .svc-scene { height: 360px; }
-  .flow { grid-auto-flow: column; justify-content: start; gap: var(--gap); }
+  .flow { grid-auto-flow: column; justify-content: center; gap: var(--gap); }   /* centred since 30 September 2026 (founder: the icons "are not in the middle") */
   .flow-node + .flow-node::before, .flow-node + .flow-node::after { display: none; }
   .flow-n { left: 50%; top: calc(100% + 0.5rem); margin: 0 0 0 -0.6em; }
 }

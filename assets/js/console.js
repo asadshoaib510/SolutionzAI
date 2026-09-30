@@ -8,7 +8,8 @@
    3 problems    glass cards: batched entrance (engine.js), columns drift at different speeds, each tilts to the pointer
    4 services    pinned on desktop: the list steps through six stops (snapped); the matching glass panel slides out.
                  Not pinned (phones, tablets, short screens; 29 September 2026): the stack stays in view while the list
-                 scrolls past, each service slides in and lights its panel and its green line, and the stack turns
+                 scrolls past, each service slides in and lights its panel and its green line as it comes up under the
+                 stack (30 September 2026), and the stack turns
    5 how we work the sideways timeline (sections.js, which also leans the glass cards)
    5 cases       shown in full on the page since 29 September 2026 (pop-up cards from 28 September until then)
    6 platforms   shared with the About page (sections.js): the rows draw in, the names drift at three depths
@@ -143,8 +144,18 @@
          stays in view (site.css); the service crossing two thirds of the way down the screen lights its panel and its
          green line, each service slides in as it arrives (fully legible throughout), and the stack turns a little with the scroll. All scrubbed, so
          scrolling back undoes them */
+      /* the line a service crosses to light up: a little under the stack, which stays under the header (30 September 2026,
+         founder: "when I start scrolling in 01 it is already on 02"; two thirds of the way down the screen until then, so
+         the next service lit while the one before was still being read) */
+      var visual = services.querySelector('.services-visual');
+      var line = function () {
+        if (window.innerWidth >= 1024 || !visual) return Math.round(window.innerHeight * 0.5);   // short desktops: the stack stands beside the list
+        var b = parseFloat(getComputedStyle(visual).top) + visual.offsetHeight;
+        return Math.round(b + (window.innerHeight - b) * 0.28);
+      };
       items.forEach(function (it, i) {
-        ScrollTrigger.create({ trigger: it, start: 'top 66%', end: 'bottom 66%', onToggle: function (self) { if (self.isActive) setService(i); } });
+        ScrollTrigger.create({ trigger: it, start: function () { return 'top ' + line() + 'px'; }, end: function () { return 'bottom ' + line() + 'px'; },
+          onToggle: function (self) { if (self.isActive) setService(i); } });
         gsap.fromTo(it, { x: -24 }, { x: 0, ease: 'none', scrollTrigger: { trigger: it, start: 'top 96%', end: 'top 74%', scrub: F.scrub(0.4) } });   // a slide only: faded text would fail the contrast check (PageSpeed)
       });
       if (rig) {
