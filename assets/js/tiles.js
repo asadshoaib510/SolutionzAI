@@ -43,7 +43,7 @@
     this.marks = (opts.logos || []).map(function (l) {
       var m = { l: l, img: null, sprite: null, wide: false }, im = new Image();
       im.decoding = 'async'; im.onload = function () { m.img = im; self.sprites(); self.dirty = true; self.kick(); };
-      im.src = (opts.base || '') + l.src;
+      if (l.src) im.src = (opts.base || '') + l.src;      // no src: a place kept blank (8 October 2026), so no other mark moves
       return m;
     });
     /* the order marks are dealt to keys, most visible key first: the ranked marks (n8n, Claude, Salesforce and the others

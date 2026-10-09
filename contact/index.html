@@ -21,7 +21,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ContactPage", "url": "https://asadshoaib510.github.io/SolutionzAI/contact/", "name": "Book a Free Discovery Call", "about": {"@id": "https://asadshoaib510.github.io/SolutionzAI/#organization"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://asadshoaib510.github.io/SolutionzAI/"}, {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://asadshoaib510.github.io/SolutionzAI/contact/"}]}]}</script><link rel="preload" href="../assets/fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/css/site.css?v=b28e718c">
+<link rel="stylesheet" href="../assets/css/site.css?v=33b339d6">
 <script>
 (function(){var d=document.documentElement,q=new URLSearchParams(location.search);
 var m=q.get('motion');if(m==='on'||m==='off')d.setAttribute('data-motion',m);
@@ -41,14 +41,13 @@ if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on
 <script src="../assets/vendor/gsap-3.13.0/ScrambleTextPlugin.min.js" defer></script>
 <script src="../assets/vendor/gsap-3.13.0/DrawSVGPlugin.min.js" defer></script>
 <script src="../assets/vendor/lenis.min.js?v=42bf5944" defer></script>
-<script src="../assets/js/intro.js?v=5134961c" defer></script>
 <script src="../assets/js/site.js?v=53e50d63" defer></script>
-<script src="../assets/js/engine.js?v=32f8f51d" defer></script>
-<script src="../assets/js/logo.js?v=5a22eadb" defer></script>
+<script src="../assets/js/chat.js?v=4554deda" data-src="../assets/js/chat.json?v=7a3aed09" data-root="../" data-label="Ask a question" defer></script><script src="../assets/js/engine.js?v=32f8f51d" defer></script>
+<script src="../assets/js/logo.js?v=5490f183" defer></script>
 <script src="../assets/js/lower.js?v=a4451daf" defer></script>
-<script src="../assets/js/rain.js?v=2f94d2c3" defer></script>
-<script src="../assets/js/contact.js?v=6e416d67" defer></script>
-<script src="../assets/js/sections.js?v=832b34b8" defer></script>
+<script src="../assets/js/rain.js?v=dbfa6306" defer></script>
+<script src="../assets/js/contact.js?v=66a70e42" defer></script>
+<script src="../assets/js/sections.js?v=5a87969a" defer></script>
 </head>
 <body class="fresh fresh-console">
 <a class="skip" href="#main">Skip to content</a>
@@ -138,7 +137,7 @@ if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on
       <h2 data-scramble>Tell us the problem. We build the fix.</h2>
     </div>
     <div class="contact-grid">
-      <form class="contact-form glow-card" action="../api/contact" method="post" data-contact-form data-reveal>
+      <form class="contact-form glow-card" action="https://script.google.com/macros/s/AKfycbz1Ra2kRlPy55mwnOUWuPzGB684RZIS3WHgPLGR_4fjk0Dz56rZgjUWGIP7BRdapl83/exec" method="post" data-contact-form data-reveal>
         <div class="field-grid">
           <div class="field">
             <label for="f-name">Your name <span class="req" aria-hidden="true">*</span></label>
@@ -157,14 +156,11 @@ if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on
             <input id="f-phone" name="phone" type="tel" autocomplete="tel" aria-describedby="h-phone">
 <p class="field-help" id="h-phone">If you would rather we call.</p>          </div>
           <div class="field field-wide">
-            <label for="f-problem">What takes up your team&#39;s time? <span class="req" aria-hidden="true">*</span></label>
-            <textarea id="f-problem" name="problem" rows="5" required aria-describedby="h-problem"></textarea>
-<p class="field-help" id="h-problem">For example: we re-type every web inquiry into our CRM, and nobody follows up after the first call.</p>          </div>
-          <div class="field field-wide">
-            <label for="f-systems">Which systems are involved?</label>
-            <input id="f-systems" name="systems" type="text" autocomplete="off" aria-describedby="h-systems">
-<p class="field-help" id="h-systems">Your CRM, calendar, accounting or phone system, if you know them.</p>          </div>
+            <label for="f-message">What can we help you with? <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="f-message" name="message" rows="5" required aria-describedby="h-message"></textarea>
+<p class="field-help" id="h-message">For example: we re-type every web inquiry into our CRM, and nobody follows up after the first call. Mention the systems involved, if you know them.</p>          </div>
           <div class="hp" aria-hidden="true"><input name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <input type="hidden" name="t" value="" data-form-t>
         </div>
         <div class="form-foot">
           <button class="btn btn-primary" type="submit">Send message <span class="arrow" aria-hidden="true">→</span></button>
@@ -256,7 +252,6 @@ if(!off)setTimeout(function(){if(!window.__freshReady){d.classList.remove('fx-on
             <li class="rise" style="--i: 1"><span><a href="tel:+15868406336">(586) 840-6336</a></span></li>
             <li class="rise" style="--i: 2"><span><a href="mailto:info@solutionzai.com">info@solutionzai.com</a></span></li>
           </ul>
-          <a class="btn btn-primary sz-footer-cta" href="../contact/">Book a free 30-minute discovery call</a>
         </div>
       </div>
       <div class="footer-bottom sz-footer-bottom">

@@ -17,7 +17,7 @@
   var still = !html.classList.contains('fx-on') || matchMedia('(prefers-reduced-motion: reduce)').matches;
   var ALL = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
   var SPEED = 2.4;                    // the component's speed was 6: now 40% of it
-  var HOT_EVERY = 520;                // ms between changes of the glowing letters (the component: 50)
+  var HOT_EVERY = 900;                // ms between changes of the glowing letters (the component: 50; 520 until 8 October 2026)
 
   /* ---------------- raining letters ---------------- */
   var zone = document.querySelector('[data-rain-zone]');
@@ -45,7 +45,7 @@
       var b = canvas.getBoundingClientRect(), nd = Math.min(window.devicePixelRatio || 1, 1.5);
       if (nd !== dpr || !sheet) { dpr = nd; makeSheet(); }
       w = b.width; h = b.height; canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
-      var n = Math.round(Math.min(260, w * h / 5200));
+      var n = Math.round(Math.min(90, w * h / 15600));   // a third of them since 8 October 2026 (a friend's review: "a bit too much and distracting while reading"; up to 260 until then)
       while (drops.length < n) drops.push({ c: pick(), x: Math.random(), y: Math.random() * 1.05, v: 0.012 + Math.random() * 0.045 });
       drops.length = n;
       draw();
@@ -71,7 +71,7 @@
           var d = drops[i]; d.y += d.v * dt * SPEED;
           if (d.y > 1.05) { d.y = -0.05; d.x = Math.random(); d.c = pick(); }
         }
-        if (t - lastHot > HOT_EVERY) { lastHot = t; hot = []; var k = 3 + ((Math.random() * 3) | 0); while (k--) hot.push((Math.random() * drops.length) | 0); }
+        if (t - lastHot > HOT_EVERY) { lastHot = t; hot = []; var k = 1 + ((Math.random() * 2) | 0); while (k--) hot.push((Math.random() * drops.length) | 0); }   // one or two glowing at a time (three to five until 8 October 2026)
       }
       draw();
       raf = requestAnimationFrame(frame);

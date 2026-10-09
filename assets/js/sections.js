@@ -82,6 +82,31 @@
       };
       if (c.desktop) {
         process.classList.add('is-pinned');
+        /* the pinned timeline keeps room above its line for the cards that hang there, so it arrived under a mostly empty
+           screen, after the empty foot of the screen-tall section before it (founder, 8 October 2026: "There is a big gap/
+           empty space", 622 px at 1905 x 1030). The section now rises over that empty room (--tl-pull, a negative top
+           margin), so the gap from the last thing above to the timeline's first words or card is the site's usual gap
+           between sections (twice --section-y). Only empty space overlaps, and that part lets the pointer through to the
+           section above (fresh.css). Measured again at every refresh: both are offsets inside each section. */
+        var tighten = function () {
+          var prev = process.previousElementSibling, cover = process.querySelector('.tl-cover'), pin1 = steps[0] && steps[0].querySelector('.tl-pin');
+          if (prev && prev.classList.contains('pin-spacer')) prev = prev.firstElementChild;
+          if (!prev || !cover || !cover.firstElementChild) return;
+          var box = function (e) { return e.getBoundingClientRect(); }, pb = box(prev), foot = -1e9;
+          // the lowest thing that shows: an element's foot, cut at any clipping box around it (a collapsed service's text)
+          q('*', prev).forEach(function (e) {
+            var r = box(e), bottom = r.bottom;
+            if (e.firstElementChild || !(r.height > 0 && r.height < pb.height * 0.9)) return;   // the innermost things only, never a layout box
+            for (var a = e.parentElement; a && a !== prev; a = a.parentElement) if (getComputedStyle(a).overflowY !== 'visible') bottom = Math.min(bottom, box(a).bottom);
+            if (bottom > r.top) foot = Math.max(foot, bottom);
+          });
+          var probe = document.createElement('div'); probe.style.cssText = 'position:absolute;visibility:hidden;height:var(--section-y)';
+          process.appendChild(probe); var gap = 2 * probe.offsetHeight; process.removeChild(probe);
+          var first = Math.min(box(cover.firstElementChild).top, pin1 ? box(pin1).top : 1e9) - box(process).top;
+          document.documentElement.style.setProperty('--tl-pull', Math.max(0, Math.round(pb.bottom - foot + first - gap)) + 'px');
+        };
+        tighten();
+        ScrollTrigger.addEventListener('refreshInit', tighten);
         var dist = function () { return Math.max(0, win.getBoundingClientRect().left + track.scrollWidth - window.innerWidth); };
         /* the axis starts lit up to 62% of the screen width and is lit to its end, at the button, when the timeline has
            finished (30 September 2026, founder: the green line "does not go all the to the end"; it stayed at 62% of the
@@ -97,9 +122,15 @@
           else reveal(tl, st, 0);
           /* a step already on screen when the pin starts appears as the section scrolls up into place */
           var early = st.getBoundingClientRect().left < window.innerWidth * 0.88;
+          /* each step finishes as its left edge passes 52% of the screen (the end dot 60%), or, where the timeline stops short
+             of that (the last ones, now the line ends at its dot; 8 October 2026), at the place it does stop, so every card
+             finishes typing and the end dot shows at every width */
+          var endX = function () { return Math.max(window.innerWidth * (st === end ? 0.6 : 0.52), win.getBoundingClientRect().left + st.offsetLeft - dist() + 2); };
           ScrollTrigger.create(early
             ? { trigger: process, start: 'top 75%', end: 'top 10%', scrub: F.scrub(0.5), animation: tl }
-            : { trigger: st, containerAnimation: move, start: 'left 88%', end: st === end ? 'left 60%' : 'left 52%', scrub: F.scrub(0.5), animation: tl });
+            : { trigger: st, containerAnimation: move, scrub: F.scrub(0.5), animation: tl,
+                start: function () { return 'left ' + Math.round(Math.max(window.innerWidth * 0.88, endX() + window.innerWidth * 0.2)) + 'px'; },
+                end: function () { return 'left ' + Math.round(endX()) + 'px'; } });
         });
       } else {
         gsap.fromTo(fill, { scaleY: 0 }, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: track, start: 'top 70%', end: 'bottom 70%', scrub: F.scrub(0.4) } });
@@ -111,7 +142,7 @@
     }
     ScrollTrigger.sort();
     ScrollTrigger.refresh();
-    return function () { if (process) process.classList.remove('is-pinned'); };
+    return function () { if (process) process.classList.remove('is-pinned'); document.documentElement.style.removeProperty('--tl-pull'); };
   });
 
   F.done();

@@ -52,3 +52,14 @@ Google Workspace), so the hero shows no tool the agency does not work with:
   google-sheets.png, google-docs.png, google-forms.png, google-slides.png, google-chat.png, google-keep.png
                           Google's own product icons (https://www.gstatic.com/images/branding/product/2x/<name>_2020q4_96dp.png,
                           192 px)
+
+Added 8 October 2026 (the founder asked for Airtable, Twilio, HubSpot and Pipedrive, on the hero keys where Google Forms,
+Google Calendar, Google Sheets and Word were; Excel's key is left blank):
+  airtable.svg            the SVG Logos collection (airtable.svg), as above
+  twilio-icon.svg         the SVG Logos collection (twilio-icon.svg), as above
+  hubspot.svg             Simple Icons 16 (CC0, https://cdn.jsdelivr.net/npm/simple-icons@16/icons/hubspot.svg), the sprocket,
+                          filled with HubSpot's orange #FF7A59 (Simple Icons' colour for it); width/height 256 added. The
+                          collection only has HubSpot's wordmark, too small on a key
+  pipedrive.png           Pipedrive's own site icon, the green p (https://cdn.was-1.pipedriveassets.com/www-main-renderer/
+                          _next/static/media/favicon-196x196.98c71512.png, 196 px, linked from https://www.pipedrive.com/en);
+                          the collection only has the dark grey wordmark, which does not show on the navy page
