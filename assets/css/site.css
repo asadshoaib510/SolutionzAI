@@ -957,19 +957,10 @@ html.fx-on .connect.is-live .cl-pulse { opacity: 1; animation: pulse 2.4s cubic-
 html.fx-on .connect.is-live .flow-card::before { animation: arrive 0.8s ease-out infinite; }
 @keyframes arrive { 0% { box-shadow: 0 0 0 0 rgba(66, 206, 51, 0.7); } 100% { box-shadow: 0 0 0 16px rgba(66, 206, 51, 0); } }
 
-/* ---------- glass stages: slow drifting colour behind frosted cards ---------- */
+/* ---------- glass stages ---------- */
+/* the three drifting colour blobs behind the frosted cards are gone (founder, 8 October 2026: "there are three circles in
+   the background, remove them"); the stage still clips and isolates its cards */
 .glass-stage { position: relative; overflow: hidden; isolation: isolate; }
-.blobs { position: absolute; inset: 0; z-index: -1; pointer-events: none; filter: blur(70px); opacity: 0.8;
-  -webkit-mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent); mask-image: linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent); }
-.blobs i { position: absolute; width: 42vw; height: 42vw; max-width: 640px; max-height: 640px; border-radius: 50%; background: radial-gradient(circle, var(--c) 0%, transparent 66%); }
-.blobs i:nth-child(1) { --c: light-dark(rgba(66, 206, 51, 0.32), rgba(66, 206, 51, 0.3)); left: -4%; top: 38%; }
-.blobs i:nth-child(2) { --c: light-dark(rgba(47, 139, 255, 0.28), rgba(47, 139, 255, 0.38)); left: 38%; top: 4%; }
-.blobs i:nth-child(3) { --c: light-dark(rgba(4, 51, 119, 0.18), rgba(20, 80, 138, 0.6)); left: 66%; top: 42%; }
-.blobs-b i:nth-child(1) { left: 8%; top: 20%; } .blobs-b i:nth-child(2) { left: 55%; top: 50%; } .blobs-b i:nth-child(3) { left: 70%; top: -5%; }
-html.fx-on .blobs i { animation: blob 20s ease-in-out infinite alternate; }
-html.fx-on .blobs i:nth-child(2) { animation-duration: 26s; animation-direction: alternate-reverse; }
-html.fx-on .blobs i:nth-child(3) { animation-duration: 32s; }
-@keyframes blob { 50% { transform: translate(6vw, -5vw) scale(1.15); } 100% { transform: translate(-4vw, 4vw) scale(0.92); } }
 @property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 
 /* ---------- 3 · problems: glass cards, each with its own accent ---------- */
